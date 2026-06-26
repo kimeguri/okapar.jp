@@ -3,44 +3,1364 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>okapar.jp</title>
+    <title>お片付けのパートナー OKAPA｜暮らしを整えるTidy upサービス</title>
+    <meta
+      name="description"
+      content="お片付けのパートナー OKAPAは、住まいのあり方を一緒に見つめ、望む暮らしが動き出す形へ整えるTidy upサービスです。"
+    >
     <style>
       :root {
         color-scheme: light;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: #f6f4ef;
-        color: #202020;
+        --ink: #302d29;
+        --muted: #716a62;
+        --deep: #3f332d;
+        --leaf: #75846f;
+        --mist: #f1eee8;
+        --sky: #eef2f1;
+        --warm: #f7ede5;
+        --rose: #bf6a54;
+        --paper: #fbfaf6;
+        --white: #ffffff;
+        --line: rgba(48, 45, 41, 0.15);
+        --shadow: 0 20px 50px rgba(63, 51, 45, 0.13);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+          "Yu Gothic", "YuGothic", "Noto Sans JP", "Segoe UI", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 82px;
       }
 
       body {
         margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
+        background:
+          linear-gradient(rgba(251, 250, 246, 0.94), rgba(251, 250, 246, 0.94)),
+          repeating-linear-gradient(90deg, rgba(63, 51, 45, 0.025) 0 1px, transparent 1px 7px),
+          var(--paper);
+        color: var(--ink);
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
       }
 
-      main {
-        width: min(640px, calc(100vw - 48px));
+      body::selection {
+        background: var(--mist);
       }
 
-      h1 {
-        margin: 0 0 16px;
-        font-size: clamp(40px, 8vw, 88px);
+      a {
+        color: inherit;
+      }
+
+      .site-header {
+        position: fixed;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 14px clamp(20px, 6%, 72px);
+        border-bottom: 1px solid rgba(48, 45, 41, 0.08);
+        background: rgba(251, 250, 246, 0.88);
+        color: var(--deep);
+        box-shadow: 0 10px 30px rgba(63, 51, 45, 0.06);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 12px;
+        text-decoration: none;
         font-weight: 700;
+      }
+
+      .brand strong {
+        font-size: 1.2rem;
         letter-spacing: 0;
       }
 
-      p {
+      .brand span {
+        font-size: 0.78rem;
+        font-weight: 600;
+        opacity: 0.9;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 0.86rem;
+        font-weight: 600;
+      }
+
+      .site-nav a {
+        text-decoration: none;
+        opacity: 0.92;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 88svh;
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        background: #211c18;
+        color: var(--white);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(90deg, rgba(33, 27, 23, 0.9), rgba(63, 51, 45, 0.5) 46%, rgba(63, 51, 45, 0.12)),
+          url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1800&q=80");
+        background-position: center right;
+        background-size: cover;
+        transform: scale(1.02);
+      }
+
+      .hero-inner {
+        position: relative;
+        width: min(980px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 150px 0 84px;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: #f2dfd4;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      .contact-option {
+        letter-spacing: 0;
+        line-break: strict;
+        text-wrap: pretty;
+        word-break: auto-phrase;
+      }
+
+      h1 {
+        max-width: 620px;
+        margin: 20px 0 0;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 1.35rem;
+        line-height: 1.5;
+        font-weight: 700;
+      }
+
+      .hero-catch {
+        max-width: 780px;
         margin: 0;
-        font-size: 18px;
-        line-height: 1.7;
+        color: var(--white);
+        font-size: 4.5rem;
+        line-height: 1.08;
+        font-weight: 780;
+        text-wrap: balance;
+      }
+
+      .hero-catch .line,
+      .heading-line {
+        display: block;
+      }
+
+      .nobr {
+        white-space: nowrap;
+      }
+
+      .hero-copy {
+        max-width: 660px;
+        margin: 28px 0 0;
+        font-size: 1.15rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        background: var(--white);
+        color: var(--deep);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .button.secondary {
+        border-color: rgba(255, 255, 255, 0.56);
+        background: transparent;
+        color: var(--white);
+      }
+
+      .section {
+        padding: 88px clamp(20px, 6%, 72px);
+        border-top: 1px solid rgba(48, 45, 41, 0.07);
+        scroll-margin-top: 82px;
+      }
+
+      .section.alt {
+        background: var(--mist);
+      }
+
+      .section.blue {
+        background: var(--sky);
+      }
+
+      .section.warm {
+        background: var(--warm);
+      }
+
+      .wrap {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+      }
+
+      .lead-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 56px;
+        align-items: start;
+      }
+
+      .section-kicker {
+        margin: 0 0 14px;
+        color: var(--rose);
+        font-size: 0.84rem;
+        font-weight: 800;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(2rem, 3.4vw, 2.4rem);
+        line-height: 1.28;
+        font-weight: 750;
+      }
+
+      h3 {
+        margin: 0 0 12px;
+        font-size: 1.2rem;
+        line-height: 1.45;
+      }
+
+      .large-copy {
+        margin: 0;
+        font-size: 1.12rem;
+      }
+
+      .flow-head {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 56px;
+        align-items: start;
+      }
+
+      .flow-head p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .flow-cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 36px;
+      }
+
+      .flow-card {
+        position: relative;
+        min-height: 196px;
+        border: 1px solid var(--line);
+        border-top: 4px solid var(--leaf);
+        border-radius: 8px;
+        background: var(--white);
+        padding: 24px;
+        box-shadow: 0 12px 28px rgba(63, 51, 45, 0.07);
+      }
+
+      .flow-icon {
+        display: inline-grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        margin-bottom: 18px;
+        border-radius: 50%;
+        background: var(--warm);
+        color: var(--deep);
+      }
+
+      .flow-icon svg {
+        width: 25px;
+        height: 25px;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+
+      .flow-card span {
+        display: inline-block;
+        margin-bottom: 14px;
+        color: var(--rose);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .flow-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .copy-block p {
+        margin: 0;
+        max-width: 680px;
+      }
+
+      .copy-block p + p {
+        margin-top: 18px;
+      }
+
+      .principles {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 42px;
+      }
+
+      .principle,
+      .target,
+      .step,
+      .case-note {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        padding: 26px;
+        box-shadow: 0 12px 28px rgba(63, 51, 45, 0.07);
+      }
+
+      .principle p,
+      .target p,
+      .step p,
+      .case-note p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .targets {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 42px;
+      }
+
+      .target {
+        min-height: 180px;
+      }
+
+      .care-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 60px;
+        align-items: start;
+      }
+
+      .care-lead p {
+        margin: 22px 0 0;
+        color: var(--muted);
+      }
+
+      .care-photo {
+        margin: 30px 0 0;
+        overflow: hidden;
+        border: 1px solid rgba(48, 45, 41, 0.12);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: 0 18px 38px rgba(63, 51, 45, 0.12);
+      }
+
+      .care-photo img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .care-points {
+        display: grid;
+        gap: 18px;
+      }
+
+      .care-point {
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(48, 45, 41, 0.12);
+        padding: 28px;
+      }
+
+      .care-point p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .program-head {
+        display: grid;
+        grid-template-columns: minmax(420px, 0.9fr) minmax(0, 1.1fr);
+        gap: 48px;
+        align-items: start;
+      }
+
+      .program-head p {
+        max-width: 560px;
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 44px;
+        counter-reset: step;
+      }
+
+      .step {
+        position: relative;
+        min-height: 230px;
+        padding-top: 64px;
+      }
+
+      .step::before {
+        counter-increment: step;
+        content: "0" counter(step);
+        position: absolute;
+        top: 22px;
+        left: 24px;
+        color: var(--leaf);
+        font-weight: 800;
+      }
+
+      .case {
+        display: grid;
+        grid-template-columns: minmax(420px, 0.95fr) minmax(0, 1.05fr);
+        gap: 52px;
+        align-items: start;
+      }
+
+      .case-panel {
+        position: sticky;
+        top: 104px;
+        border-radius: 8px;
+        background: var(--deep);
+        color: var(--white);
+        padding: 32px;
+        box-shadow: var(--shadow);
+      }
+
+      .case-panel p {
+        margin: 18px 0 0;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .case-panel h2 {
+        font-size: 2.05rem;
+        line-height: 1.34;
+      }
+
+      .case-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .case-note strong {
+        color: var(--deep);
+      }
+
+      .quote {
+        margin: 32px 0 0;
+        border-left: 4px solid var(--rose);
+        padding: 10px 0 10px 24px;
+        color: var(--deep);
+        font-size: 1.08rem;
+        font-weight: 650;
+      }
+
+      .story {
+        background: var(--paper);
+      }
+
+      .story-head {
+        display: grid;
+        grid-template-columns: minmax(380px, 0.92fr) minmax(0, 1.08fr);
+        gap: 52px;
+        align-items: start;
+      }
+
+      .story-intro p {
+        max-width: 670px;
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .story h2 .heading-line + .heading-line {
+        margin-top: 0.28em;
+      }
+
+      .story-title-sub {
+        max-width: 620px;
+        color: var(--deep);
+        font-size: 0.76em;
+        line-height: 1.42;
+      }
+
+      .story-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .story-tags span {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--white);
+        padding: 7px 13px;
+        color: var(--deep);
+        font-size: 0.84rem;
+        font-weight: 700;
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: minmax(320px, 0.74fr) minmax(0, 1.26fr);
+        gap: 28px;
+        margin-top: 48px;
+        align-items: start;
+      }
+
+      .story-panel,
+      .story-note,
+      .story-result {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: 0 12px 28px rgba(63, 51, 45, 0.07);
+      }
+
+      .story-panel {
+        position: sticky;
+        top: 104px;
+        padding: 30px;
+        background: var(--warm);
+      }
+
+      .story-panel p,
+      .story-note p,
+      .story-result p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .story-notes {
+        display: grid;
+        gap: 18px;
+        counter-reset: story-note;
+      }
+
+      .story-note {
+        position: relative;
+        padding: 28px 28px 28px 82px;
+      }
+
+      .story-note::before {
+        counter-increment: story-note;
+        content: "0" counter(story-note);
+        position: absolute;
+        top: 30px;
+        left: 28px;
+        color: var(--rose);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .story-result {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.58fr);
+        gap: 34px;
+        margin-top: 28px;
+        padding: 30px;
+        align-items: start;
+      }
+
+      .story-voice {
+        margin: 0;
+        border-left: 4px solid var(--rose);
+        padding: 4px 0 4px 22px;
+        color: var(--deep);
+        font-size: 1.06rem;
+        font-weight: 700;
+        line-height: 1.8;
+      }
+
+      .story-voice span {
+        display: block;
+      }
+
+      .story-videos {
+        margin-top: 34px;
+      }
+
+      .video-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        align-items: end;
+        margin-bottom: 18px;
+      }
+
+      .video-head p {
+        max-width: 620px;
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .video-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        padding: 14px;
+        box-shadow: 0 12px 28px rgba(63, 51, 45, 0.07);
+      }
+
+      .video-frame {
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #1f1b18;
+        aspect-ratio: 16 / 9;
+      }
+
+      .video-frame iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .video-card h3 {
+        margin: 14px 4px 2px;
+        font-size: 1rem;
+      }
+
+      .tidyist {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 42px;
+      }
+
+      .tidyist article {
+        border-radius: 8px;
+        background: var(--white);
+        padding: 30px;
+        border: 1px solid var(--line);
+      }
+
+      .tidyist p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .contact {
+        background: var(--deep);
+        color: var(--white);
+      }
+
+      .contact-box {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 40px;
+        align-items: end;
+      }
+
+      .contact p {
+        max-width: 760px;
+        margin: 20px 0 0;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .contact-options {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        max-width: 100%;
+        margin-top: 30px;
+      }
+
+      .contact-option {
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 18px;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 700;
+        line-height: 1.6;
+      }
+
+      .contact .button {
+        background: var(--rose);
+        color: var(--white);
+        justify-self: start;
+        min-width: 180px;
+      }
+
+      .contact-cta {
+        display: grid;
+        gap: 16px;
+        justify-items: start;
+      }
+
+      .contact-cta-label {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.88rem;
+        font-weight: 700;
+      }
+
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 8px;
+        padding: 0 15px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        font-weight: 700;
+        line-height: 1;
+        text-decoration: none;
+      }
+
+      .site-footer {
+        padding: 32px clamp(20px, 6%, 72px);
+        background: #2c2521;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.86rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.82);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      @media (max-width: 900px) {
+        .site-header {
+          align-items: flex-start;
+        }
+
+        .site-nav {
+          display: none;
+        }
+
+        .brand {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .hero-catch {
+          font-size: 3.25rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        .lead-grid,
+        .case,
+        .care-grid,
+        .contact-box,
+        .flow-head,
+        .program-head,
+        .story-head,
+        .story-grid,
+        .story-result {
+          grid-template-columns: 1fr;
+        }
+
+        .principles,
+        .targets,
+        .flow-cards,
+        .contact-options,
+        .steps,
+        .tidyist,
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .case-panel {
+          position: static;
+        }
+
+        .story-panel {
+          position: static;
+        }
+
+        .video-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .contact-box {
+          align-items: start;
+        }
+
+        .contact-cta {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .hero {
+          min-height: 90svh;
+        }
+
+        .hero-inner {
+          width: min(100% - 32px, 980px);
+          padding-bottom: 58px;
+        }
+
+        .hero-catch {
+          font-size: 2.7rem;
+        }
+
+        h1 {
+          font-size: 1.08rem;
+        }
+
+        .hero-copy,
+        .large-copy {
+          font-size: 1rem;
+        }
+
+        .section {
+          padding-top: 64px;
+          padding-bottom: 64px;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .nobr {
+          white-space: normal;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <h1>okapar.jp</h1>
-      <p>Website coming soon.</p>
+    <header class="site-header" aria-label="サイトヘッダー">
+      <a class="brand" href="#top" aria-label="OKAPA トップへ">
+        <strong>OKAPA</strong>
+        <span>お片付けのパートナー</span>
+      </a>
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <a href="#about">想い</a>
+        <a href="#flow">流れ</a>
+        <a href="#program">プログラム</a>
+        <a href="#care">暮らしの変化</a>
+        <a href="#story">ストーリー</a>
+        <a href="#contact">相談</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="お片付けのパートナー OKAPA">
+        <div class="hero-inner">
+          <p class="eyebrow">お片付けのパートナー OKAPA</p>
+          <p class="hero-catch"><span class="line">自分らしさを、</span><span class="line">いまの暮らしに。</span></p>
+          <h1>暮らしを整えるTidy upサービス</h1>
+          <p class="hero-copy">
+            住まいのあり方を一緒に見つめ、無理なく手を動かしながら、
+            <span class="nobr">その人が大切にしたい</span>時間や場所が戻っていく形へ整えます。
+          </p>
+          <div class="hero-actions" aria-label="ページ内リンク">
+            <a class="button" href="#flow">流れを見る</a>
+            <a class="button secondary" href="#contact">LINEで相談する</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="flow">
+        <div class="wrap flow-head">
+          <div>
+            <p class="section-kicker">FIRST STEP</p>
+            <h2>依頼すると、<span class="nobr">何が起きるのか。</span></h2>
+          </div>
+          <p>
+            OKAPAは、いきなり物を減らすところから始めません。
+            今の暮らしを伺い、一緒に手を動かしながら、掃除や収納が続きやすい形へ整えていきます。
+          </p>
+        </div>
+        <div class="wrap flow-cards">
+          <article class="flow-card">
+            <div class="flow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 6.5h14" />
+                <path d="M5 11.5h10" />
+                <path d="M5 16.5h7" />
+                <path d="M18 15.5l1.5 1.5 2.5-3" />
+              </svg>
+            </div>
+            <span>01</span>
+            <h3>ヒアリング</h3>
+            <p>困っていること、暮らしのリズム、大切にしたい時間を丁寧に伺います。</p>
+          </article>
+          <article class="flow-card">
+            <div class="flow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4.5 7.5h15" />
+                <path d="M7 7.5v10" />
+                <path d="M17 7.5v10" />
+                <path d="M6 17.5h12" />
+                <path d="M9.5 12.5h5" />
+              </svg>
+            </div>
+            <span>02</span>
+            <h3>一緒に整理</h3>
+            <p>判断を急がず、残すもの、動かすもの、手放すものを一緒に見つめます。</p>
+          </article>
+          <article class="flow-card">
+            <div class="flow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4.5 18.5h15" />
+                <path d="M6.5 18.5v-9l5.5-4 5.5 4v9" />
+                <path d="M9.5 18.5v-5h5v5" />
+                <path d="M8.5 10.5h7" />
+              </svg>
+            </div>
+            <span>03</span>
+            <h3>仕組みづくり</h3>
+            <p>収納、掃除、洗濯、調理など、日々の動きが楽になる場所を整えます。</p>
+          </article>
+          <article class="flow-card">
+            <div class="flow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 4.5v3" />
+                <path d="M17 4.5v3" />
+                <path d="M5.5 7.5h13" />
+                <path d="M6.5 6h11A1.5 1.5 0 0 1 19 7.5v10A1.5 1.5 0 0 1 17.5 19h-11A1.5 1.5 0 0 1 5 17.5v-10A1.5 1.5 0 0 1 6.5 6Z" />
+                <path d="M8.5 12.5h2" />
+                <path d="M13.5 12.5h2" />
+                <path d="M8.5 15.5h2" />
+              </svg>
+            </div>
+            <span>04</span>
+            <h3>3ヶ月フォロー</h3>
+            <p>Tidy up後の質問や再訪問を通して、暮らしの中で続く形を育てます。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="wrap lead-grid">
+          <div>
+            <p class="section-kicker">ABOUT</p>
+            <h2>片づけを、個人の努力だけにしない。</h2>
+          </div>
+          <div class="copy-block">
+            <p class="large-copy">
+              日々の暮らしは、仕事、家族、予定の変化、心身の状態に影響を受けながら形づくられています。
+              片づけや掃除が大切だと分かっていても、思うように続けることは誰にとっても簡単ではありません。
+            </p>
+            <p>
+              OKAPAは、片づけを良し悪しで判断するのではなく、その方の暮らしに寄り添いながら、
+              住まいのあり方を一緒に見つめます。物を減らすことや空間をきれいにすることだけでなく、
+              人と物、人と空間、人と人との関係に自然な巡りが戻っていくことを大切にしています。
+            </p>
+          </div>
+        </div>
+
+        <div class="wrap principles">
+          <article class="principle">
+            <h3>暮らしから考える</h3>
+            <p>どんな場所で休み、食べ、学び、創造し、明日へ向かう力を養いたいのか。住まいと望む暮らしをつなげます。</p>
+          </article>
+          <article class="principle">
+            <h3>一緒に手を動かす</h3>
+            <p>作業として整えるだけでなく、考え、選び、動かし、戻していく過程に伴走します。</p>
+          </article>
+          <article class="principle">
+            <h3>続く形に育てる</h3>
+            <p>その後も無理なく続く仕組みを一緒につくり、日々の流れがなめらかになる状態を目指します。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap">
+          <p class="section-kicker">FOR YOU</p>
+          <h2>片づけが止まっている理由ごと、受け止めます。</h2>
+          <div class="targets">
+            <article class="target">
+              <h3>忙しさで後回しになる</h3>
+              <p>やろうと思っていても、予定や仕事で心と身体がついてこない方へ。</p>
+            </article>
+            <article class="target">
+              <h3>家事の動線が重い</h3>
+              <p>掃除、洗濯、調理がしにくく、毎日の負担が積み重なっている方へ。</p>
+            </article>
+            <article class="target">
+              <h3>大切な物が多い</h3>
+              <p>本、道具、趣味のものが多く、暮らしの中で生かし直したい方へ。</p>
+            </article>
+            <article class="target">
+              <h3>望む暮らしを形にしたい</h3>
+              <p>自分らしく、心地よく暮らしたい気持ちを住まいにつなげます。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section warm" id="care">
+        <div class="wrap care-grid">
+          <div class="care-lead">
+            <p class="section-kicker">LIFE CHANGE</p>
+            <h2><span class="heading-line">暮らしの変化に</span><span class="heading-line">向き合う方へ。</span></h2>
+            <p>
+              ご家族の病気や介護、入院・退院、生活環境や住まいの変化。
+              そうした出来事が起こると、ご本人だけでなく、支えるご家族の暮らしも心も大きく揺れます。
+            </p>
+            <p>
+              OKAPAは、困難な状況でも空間を整理するだけではなく、
+              ご本人やご家族がどんな場所で暮らしたいのかを大切にしながら、住まいのあり方を一緒に考えます。
+            </p>
+            <figure class="care-photo">
+              <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80" alt="安心して暮らせる住まいの一角">
+            </figure>
+          </div>
+          <div class="care-points">
+            <article class="care-point">
+              <h3>入院・退院の前後に</h3>
+              <p>動線、休める場所、必要な物の置き場所を見直し、日々の生活に戻りやすい環境を整えます。</p>
+            </article>
+            <article class="care-point">
+              <h3>介護が始まるときに</h3>
+              <p>ご本人の安心と、ご家族の負担の両方を見つめながら、無理のない住まいの形を考えます。</p>
+            </article>
+            <article class="care-point">
+              <h3>何から考えればいいか分からないときに</h3>
+              <p>怖さや不安がある段階でも大丈夫です。まずは暮らしの状況を言葉にするところから始めます。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="program">
+        <div class="wrap program-head">
+          <div>
+            <p class="section-kicker">PROGRAM</p>
+            <h2><span class="nobr">OKAPAプログラムの流れ</span></h2>
+          </div>
+          <p>
+            合計3ヶ月の期間で、お片付けのパートナーとして寄り添います。
+            Tidy up後も質問を受けながら、暮らしに戻っていく形まで見守ります。
+          </p>
+        </div>
+        <div class="wrap steps">
+          <article class="step">
+            <h3>ヒアリング</h3>
+            <p>今の暮らし、困っていること、大切にしたいことを丁寧に伺います。</p>
+          </article>
+          <article class="step">
+            <h3>打ち合わせ</h3>
+            <p>望む暮らしと住まいの距離を見つめ、作業の方向を一緒に決めます。</p>
+          </article>
+          <article class="step">
+            <h3>Tidy up</h3>
+            <p>一緒に手を動かしながら、物の役割と空間のはたらきを整えます。</p>
+          </article>
+          <article class="step">
+            <h3>アフターフォロー</h3>
+            <p>暮らしの中で自然に続くよう、質問や再訪問を通して支えます。</p>
+          </article>
+        </div>
+
+        <div class="wrap tidyist">
+          <article>
+            <h3>Tidyist</h3>
+            <p>
+              OKAPAでは、Tidy upの過程に寄り添う人をTidyistと呼んでいます。
+              ご本人の思いや判断を大切にしながら、住まいのあり方を一緒に整えます。
+            </p>
+          </article>
+          <article>
+            <h3>2名で伺う理由</h3>
+            <p>
+              一人はご本人に寄り添うパートナー。もう一人は、望む暮らしを考えながら進められるように、
+              作業のリズムを整えてフォローする伴奏者です。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section blue" id="approach">
+        <div class="wrap case">
+          <aside class="case-panel">
+            <p class="section-kicker">APPROACH</p>
+            <h2><span class="heading-line">暮らしの流れが、</span><span class="heading-line">少しずつなめらかに</span><span class="heading-line">なるように。</span></h2>
+            <p>
+              OKAPAは、住まいを整えることを個人の責任だけにせず、
+              誰かの手を借りながら共に整えていけるものとして捉えています。
+            </p>
+          </aside>
+          <div class="case-list">
+            <article class="case-note">
+              <h3>良し悪しで判断しない</h3>
+              <p>
+                片づいているか、片づいていないかだけで暮らしを見ません。
+                今の住まいが、どんな時間や思いを抱えてきたのかを丁寧に受け止めます。
+              </p>
+            </article>
+            <article class="case-note">
+              <h3>望む暮らしから整える</h3>
+              <p>
+                ほっと休める場所、食事を楽しむ時間、学びや趣味に向かう余白。
+                その方が大切にしたい暮らしから、物の場所や空間の役割を考えます。
+              </p>
+            </article>
+            <article class="case-note">
+              <h3>物と空間の役割を戻す</h3>
+              <p>
+                物が本来の役割を果たし、場所がはたらきを取り戻すと、
+                人の動きや時間の流れにも変化が生まれます。
+              </p>
+            </article>
+            <article class="case-note">
+              <h3>続いていく形を育てる</h3>
+              <p>
+                きれいにして終わりではなく、その後の暮らしの中で無理なく続く仕組みを一緒につくります。
+                小さな実践が日々の安心につながることを大切にしています。
+              </p>
+            </article>
+            <article class="case-note">
+              <h3>暮らしの変化に寄り添う</h3>
+              <p>
+                一人で過ごす暮らしにも、家族や身近な人と共に過ごす暮らしにも、それぞれの時間や役割があります。
+                その時々の変化に合わせて、住まいのあり方を一緒に見つめていきます。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section story" id="story">
+        <div class="wrap story-head">
+          <div>
+            <p class="section-kicker">STORY</p>
+            <h2><span class="heading-line">暮らしのストーリー</span><span class="heading-line story-title-sub">「菌と共生する暮らし」を形にする。</span></h2>
+          </div>
+          <div class="story-intro">
+            <p>
+              漫画家MOSAさんのOKAPAプログラム。自然や植物、動物を大切にされ、
+              科学や物理への学びにも深い関心をお持ちの方です。
+              作品に『マンガ人類学講義 ボルネオの森の民には、なぜ感謝も反省も所有もないのか』があります。
+            </p>
+            <div class="story-tags" aria-label="MOSAさんの事例概要">
+              <span>30代男性 / 一人暮らし</span>
+              <span>Tidy up 2日間</span>
+              <span>Tidyist 2名で訪問</span>
+              <span>1ヶ月後に再訪問</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap story-grid">
+          <article class="story-panel">
+            <p class="section-kicker">DESIRE</p>
+            <h3>望んでいた暮らし</h3>
+            <p>
+              MOSAさんのご希望は、自然と調和した暮らし、「菌と共生する」こと。
+              環境に負荷のかかる洗剤を避け、食事も無添加を意識し、有機の調味料を大切に使われていました。
+              同時に「健康的な暮らしがしたい」「科学の学習に没頭したい」という思いも見えてきました。
+            </p>
+          </article>
+
+          <div class="story-notes">
+            <article class="story-note">
+              <h3>暮らしの前提を整える</h3>
+              <p>
+                本が1500冊以上ある一方で、本棚がほとんどなく、衣類を洗う、干す、しまう仕組みも不安定でした。
+                床に物が溢れ、埃が溜まりやすく、水回りの掃除もしにくい状態から、清掃、レイアウト確認、不用品の整理を進めました。
+              </p>
+            </article>
+            <article class="story-note">
+              <h3>望む暮らしが言葉になる</h3>
+              <p>
+                作業後の打ち合わせで、MOSAさんの中に「良い菌は白い」というイメージが浮かびました。
+                良い菌と共に暮らすためには、カビや臭いをケアできる、掃除しやすい環境が必要だと見えてきました。
+              </p>
+            </article>
+            <article class="story-note">
+              <h3>学びに戻れる仕組みづくり</h3>
+              <p>
+                2日目には本棚9本を組み立て、デスク、ベッド、衣類収納、キッチン、洗濯、トイレ、浴室の仕組みを整えました。
+                一人では止まりやすい大きな作業も、パートナーがいることで生活に戻れる形まで進められます。
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="wrap story-result">
+          <div>
+            <p class="section-kicker">AFTER</p>
+            <h3>1ヶ月後、暮らしが動き出していた</h3>
+            <p>
+              再訪問したお部屋は、入った瞬間に空気が違いました。
+              床は素足で気持ちよく過ごせる状態になり、水拭きの習慣も生まれていました。
+              自炊がしやすくなり、本も学びに戻れる状態へ。住まいの機能が、望む暮らしを支えはじめていました。
+            </p>
+          </div>
+          <blockquote class="story-voice">
+            <span>「掃除がしやすくなりました」</span>
+            <span>「水拭きが気持ちよくなりました」</span>
+            <span>「自炊がしやすくなりました」</span>
+            <span>「学びに戻れそうです」</span>
+          </blockquote>
+        </div>
+
+        <div class="wrap story-videos">
+          <div class="video-head">
+            <div>
+              <p class="section-kicker">MOVIE</p>
+              <h2>MOSAさんのTidy up動画</h2>
+            </div>
+            <p>
+              OKAPAプログラムの空気感や、住まいが少しずつ動き出していく様子を動画でもご覧いただけます。
+            </p>
+          </div>
+          <div class="video-grid">
+            <article class="video-card">
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/1ReHN-5_E4w"
+                  title="MOSAさんのOKAPAプログラム動画 1"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <h3>暮らしが動き出すまで 1</h3>
+            </article>
+            <article class="video-card">
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/q7yd3HtVlWE"
+                  title="MOSAさんのOKAPAプログラム動画 2"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <h3>暮らしが動き出すまで 2</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="wrap contact-box">
+          <div>
+            <p class="section-kicker">CONTACT</p>
+            <h2>ご自身の暮らしについて、少し話してみたいときに。</h2>
+            <p>
+              「こんなことも相談できる？」という小さな問いかけでも大丈夫です。
+              OKAPAは、お一人おひとりのこれからの暮らしに寄り添います。
+            </p>
+            <div class="contact-options" aria-label="相談できる段階">
+              <div class="contact-option">まだ依頼するか決めていない</div>
+              <div class="contact-option">家族のことで相談したい</div>
+              <div class="contact-option">何から始めればいいか分からない</div>
+            </div>
+            <p>LINEから気軽にメッセージをください。</p>
+          </div>
+          <div class="contact-cta" aria-label="SNSと相談リンク">
+            <p class="contact-cta-label">SNSでも発信しています</p>
+            <div class="social-links">
+              <a class="social-link" href="https://youtube.com/@okatazukenopartner?si=C1v0SNw3_c-wD08X" target="_blank" rel="noopener">YouTube</a>
+              <a class="social-link" href="https://note.com/great_llama851" target="_blank" rel="noopener">note</a>
+            </div>
+            <a class="button" href="https://lin.ee/uwDvG7Rc" target="_blank" rel="noopener" aria-label="LINEで相談する">LINEで相談する</a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>OKAPA｜お片付けのパートナー</span>
+        <div class="footer-links" aria-label="SNSリンク">
+          <a href="https://youtube.com/@okatazukenopartner?si=C1v0SNw3_c-wD08X" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://note.com/great_llama851" target="_blank" rel="noopener">note</a>
+        </div>
+        <span>暮らしを整えるTidy upサービス</span>
+      </div>
+    </footer>
   </body>
 </html>
