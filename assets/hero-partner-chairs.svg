@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
+  <title id="title">Two partner chairs in a calm room</title>
+  <desc id="desc">A quiet room with two separate chairs arranged on the right side, angled slightly toward each other.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8cdbf"/>
+      <stop offset="0.54" stop-color="#e5dbcf"/>
+      <stop offset="1" stop-color="#c9b49f"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b8946d"/>
+      <stop offset="0.55" stop-color="#d0aa7a"/>
+      <stop offset="1" stop-color="#9d7957"/>
+    </linearGradient>
+    <linearGradient id="light" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff7ea" stop-opacity="0"/>
+      <stop offset="0.72" stop-color="#fff6e6" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".56"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="18" dy="24" stdDeviation="18" flood-color="#4b321f" flood-opacity=".24"/>
+    </filter>
+    <pattern id="grain" width="90" height="90" patternUnits="userSpaceOnUse">
+      <path d="M8 18h56M24 48h58M4 76h70" fill="none" stroke="#72563e" stroke-opacity=".07" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="800" fill="url(#wall)"/>
+  <path d="M0 570h1600v230H0z" fill="url(#floor)"/>
+  <path d="M0 570h1600" fill="none" stroke="#8f7b69" stroke-opacity=".32" stroke-width="4"/>
+  <rect y="570" width="1600" height="230" fill="url(#grain)" opacity=".42"/>
+  <path d="M1180 0h420v800h-420z" fill="url(#light)"/>
+  <g opacity=".62">
+    <rect x="1390" y="0" width="88" height="560" fill="#f5eee5"/>
+    <rect x="1492" y="0" width="70" height="560" fill="#eee0cf"/>
+    <path d="M1384 0c42 170 36 374 6 560M1488 0c24 166 22 386-8 560" fill="none" stroke="#bea68f" stroke-opacity=".56" stroke-width="9"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <g transform="translate(1170 433) rotate(-8)">
+      <path d="M42-185h156c26 0 46 21 43 47l-15 129H38L22-138c-3-26 17-47 20-47z" fill="#cfc4b8"/>
+      <path d="M62-164h116c19 0 34 15 32 34L199-32H44l-12-98c-2-19 12-34 30-34z" fill="#e1d7cc"/>
+      <path d="M34-8h202c15 0 28 13 28 28v25H4V20C4 5 17-8 34-8z" fill="#b08962"/>
+      <path d="M40 45h190v42H40z" fill="#d7c4b1"/>
+      <path d="M38 86l-28 176M224 86l38 176M70 84l-8 176M188 84l14 176" stroke="#6f5134" stroke-width="16" stroke-linecap="round"/>
+      <path d="M4 22h260" stroke="#7a583b" stroke-width="17" stroke-linecap="round"/>
+      <path d="M28-60h-55M235-60h58" stroke="#805d3c" stroke-width="18" stroke-linecap="round"/>
+      <rect x="102" y="-92" width="90" height="58" rx="8" fill="#7c8a76" opacity=".8"/>
+    </g>
+    <g transform="translate(1375 445) rotate(8)">
+      <path d="M42-185h156c26 0 46 21 43 47l-15 129H38L22-138c-3-26 17-47 20-47z" fill="#cfc4b8"/>
+      <path d="M62-164h116c19 0 34 15 32 34L199-32H44l-12-98c-2-19 12-34 30-34z" fill="#e2d8cf"/>
+      <path d="M34-8h202c15 0 28 13 28 28v25H4V20C4 5 17-8 34-8z" fill="#b08962"/>
+      <path d="M40 45h190v42H40z" fill="#d9c6b5"/>
+      <path d="M38 86l-28 176M224 86l38 176M70 84l-8 176M188 84l14 176" stroke="#6f5134" stroke-width="16" stroke-linecap="round"/>
+      <path d="M4 22h260" stroke="#7a583b" stroke-width="17" stroke-linecap="round"/>
+      <path d="M28-60h-55M235-60h58" stroke="#805d3c" stroke-width="18" stroke-linecap="round"/>
+      <rect x="70" y="-94" width="94" height="60" rx="8" fill="#798772" opacity=".78"/>
+    </g>
+    <g transform="translate(1305 426)">
+      <ellipse cx="0" cy="155" rx="80" ry="20" fill="#6a4b31" opacity=".16"/>
+      <path d="M-48 0h96c14 0 24 10 24 23v5c0 13-10 23-24 23h-96c-14 0-24-10-24-23v-5c0-13 10-23 24-23z" fill="#b4895d"/>
+      <path d="M-44 47l-18 120M44 47l18 120" stroke="#6f5134" stroke-width="12" stroke-linecap="round"/>
+      <path d="M-12-54c20 18 22 36 16 56M18-82c19 24 14 50-3 76M-34-74c28 15 37 40 26 72" fill="none" stroke="#6e7f62" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-26-10h52l-8 28h-36z" fill="#d9ccb8"/>
+    </g>
+  </g>
+  <ellipse cx="1310" cy="704" rx="310" ry="48" fill="#48321f" opacity=".14"/>
+</svg>
