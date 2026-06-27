@@ -792,16 +792,27 @@
       .social-link svg {
         width: 24px;
         height: 24px;
-        fill: none;
-        stroke: currentColor;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 1.9;
-      }
-
-      .social-link .filled {
         fill: currentColor;
         stroke: none;
+      }
+
+      .youtube-link,
+      .note-link {
+        background: var(--white);
+        border-color: rgba(255, 255, 255, 0.7);
+      }
+
+      .youtube-link {
+        color: #ff0000;
+      }
+
+      .youtube-link svg {
+        width: 30px;
+        height: 30px;
+      }
+
+      .note-link {
+        color: #050505;
       }
 
       .site-footer {
@@ -830,6 +841,14 @@
         color: rgba(255, 255, 255, 0.82);
         font-weight: 700;
         text-decoration: none;
+      }
+
+      .footer-links .youtube-link {
+        color: #ff0000;
+      }
+
+      .footer-links .note-link {
+        color: #050505;
       }
 
       @media (max-width: 900px) {
@@ -1370,18 +1389,14 @@
             <div class="contact-panel" aria-label="SNSリンク">
               <p class="contact-cta-label">SNSでも発信しています</p>
               <div class="social-links">
-                <a class="social-link" href="https://youtube.com/@okatazukenopartner?si=C1v0SNw3_c-wD08X" target="_blank" rel="noopener" aria-label="YouTubeを見る" title="YouTube">
+                <a class="social-link youtube-link" href="https://youtube.com/@okatazukenopartner?si=C1v0SNw3_c-wD08X" target="_blank" rel="noopener" aria-label="YouTubeを見る" title="YouTube">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <rect x="3" y="6.5" width="18" height="11" rx="3.2"></rect>
-                    <path class="filled" d="M10.3 9.35 15.7 12l-5.4 2.65Z"></path>
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
                   </svg>
                 </a>
-                <a class="social-link" href="https://note.com/great_llama851" target="_blank" rel="noopener" aria-label="noteを見る" title="note">
+                <a class="social-link note-link" href="https://note.com/great_llama851" target="_blank" rel="noopener" aria-label="noteを見る" title="note">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <rect x="5" y="4" width="14" height="16" rx="3"></rect>
-                    <path d="M9 9.2h6"></path>
-                    <path d="M9 12.8h5"></path>
-                    <path d="M9 16.2h4"></path>
+                    <path d="M0 .279c4.623 0 10.953-.235 15.498-.117 6.099.156 8.39 2.813 8.468 9.374.077 3.71 0 14.335 0 14.335h-6.598c0-9.296.04-10.83 0-13.759-.078-2.578-.814-3.807-2.795-4.041-2.097-.235-7.975-.04-7.975-.04v17.84H0Z"></path>
                   </svg>
                 </a>
               </div>
@@ -1399,18 +1414,14 @@
       <div class="footer-inner">
         <span>OKAPA｜お片付けのパートナー</span>
         <div class="footer-links" aria-label="SNSリンク">
-          <a class="social-link" href="https://youtube.com/@okatazukenopartner?si=C1v0SNw3_c-wD08X" target="_blank" rel="noopener" aria-label="YouTubeを見る" title="YouTube">
+          <a class="social-link youtube-link" href="https://youtube.com/@okatazukenopartner?si=C1v0SNw3_c-wD08X" target="_blank" rel="noopener" aria-label="YouTubeを見る" title="YouTube">
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="6.5" width="18" height="11" rx="3.2"></rect>
-              <path class="filled" d="M10.3 9.35 15.7 12l-5.4 2.65Z"></path>
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
             </svg>
           </a>
-          <a class="social-link" href="https://note.com/great_llama851" target="_blank" rel="noopener" aria-label="noteを見る" title="note">
+          <a class="social-link note-link" href="https://note.com/great_llama851" target="_blank" rel="noopener" aria-label="noteを見る" title="note">
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="5" y="4" width="14" height="16" rx="3"></rect>
-              <path d="M9 9.2h6"></path>
-              <path d="M9 12.8h5"></path>
-              <path d="M9 16.2h4"></path>
+              <path d="M0 .279c4.623 0 10.953-.235 15.498-.117 6.099.156 8.39 2.813 8.468 9.374.077 3.71 0 14.335 0 14.335h-6.598c0-9.296.04-10.83 0-13.759-.078-2.578-.814-3.807-2.795-4.041-2.097-.235-7.975-.04-7.975-.04v17.84H0Z"></path>
             </svg>
           </a>
         </div>
