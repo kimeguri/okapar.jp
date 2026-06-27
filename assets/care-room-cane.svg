@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">A quiet room prepared for life changes</title>
+  <desc id="desc">A calm room without people, showing a chair, a cane, folded towels, plants, and a soft place to rest.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efe6d8"/>
+      <stop offset=".56" stop-color="#f7efe2"/>
+      <stop offset="1" stop-color="#dcc9b3"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b98658"/>
+      <stop offset=".58" stop-color="#d6ad77"/>
+      <stop offset="1" stop-color="#9b704d"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="12" dy="20" stdDeviation="15" flood-color="#513a27" flood-opacity=".24"/>
+    </filter>
+    <pattern id="floorLines" width="118" height="118" patternUnits="userSpaceOnUse">
+      <path d="M0 34h118M0 86h118" stroke="#6d4a2f" stroke-opacity=".08" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="820" fill="url(#wall)"/>
+  <rect y="546" width="1200" height="274" fill="url(#floor)"/>
+  <rect y="546" width="1200" height="274" fill="url(#floorLines)" opacity=".55"/>
+  <path d="M0 546h1200" stroke="#8b755e" stroke-opacity=".28" stroke-width="4"/>
+  <g opacity=".72">
+    <rect x="258" y="64" width="252" height="352" rx="8" fill="#fff8ef"/>
+    <rect x="286" y="88" width="196" height="294" fill="#d9e8d5"/>
+    <path d="M286 208h196M384 88v294" stroke="#b9946d" stroke-width="10" opacity=".88"/>
+    <path d="M244 64h22v352h-22zM504 64h22v352h-22z" fill="#aa8057"/>
+    <path d="M250 64h270" stroke="#8d6745" stroke-width="10"/>
+  </g>
+  <g filter="url(#shadow)">
+    <g transform="translate(118 454)">
+      <rect x="0" y="0" width="210" height="216" rx="10" fill="#b4865b"/>
+      <rect x="18" y="24" width="174" height="42" rx="5" fill="#d7b58c"/>
+      <rect x="18" y="86" width="174" height="42" rx="5" fill="#d7b58c"/>
+      <rect x="18" y="148" width="174" height="42" rx="5" fill="#d7b58c"/>
+      <circle cx="170" cy="45" r="8" fill="#6e4f36"/>
+      <circle cx="170" cy="107" r="8" fill="#6e4f36"/>
+      <circle cx="170" cy="169" r="8" fill="#6e4f36"/>
+    </g>
+    <g transform="translate(718 420)">
+      <path d="M64-170h176c28 0 49 23 45 51L268 22H40L20-119c-4-28 16-51 44-51z" fill="#d6cabd"/>
+      <path d="M84-148h128c21 0 37 17 34 37L235-1H57L43-111c-3-20 12-37 41-37z" fill="#eee2d5"/>
+      <rect x="0" y="0" width="312" height="66" rx="24" fill="#ac7f55"/>
+      <rect x="34" y="58" width="246" height="50" rx="8" fill="#d3beaa"/>
+      <path d="M45 108l-34 186M265 108l40 186M86 106l-12 186M226 106l18 186" stroke="#6e4f36" stroke-width="17" stroke-linecap="round"/>
+      <path d="M22-54h-64M286-54h66" stroke="#78573a" stroke-width="18" stroke-linecap="round"/>
+      <rect x="118" y="-82" width="96" height="62" rx="8" fill="#8a9278" opacity=".82"/>
+    </g>
+    <g transform="translate(646 468)">
+      <path d="M92-190c36 0 60 25 60 56 0 17-8 34-23 48" fill="none" stroke="#4f3c31" stroke-width="17" stroke-linecap="round"/>
+      <path d="M116-86L56 220" stroke="#3f312b" stroke-width="18" stroke-linecap="round"/>
+      <ellipse cx="48" cy="228" rx="30" ry="12" fill="#3f312b"/>
+    </g>
+    <g transform="translate(478 374)">
+      <rect width="174" height="252" rx="10" fill="#9b7652"/>
+      <rect x="20" y="24" width="134" height="42" rx="20" fill="#eadfce"/>
+      <rect x="20" y="82" width="134" height="42" rx="20" fill="#efe5d7"/>
+      <rect x="20" y="140" width="134" height="42" rx="20" fill="#e3d3bf"/>
+      <rect x="20" y="200" width="134" height="30" rx="6" fill="#746653"/>
+      <path d="M72-96c24 20 28 52 16 90M38-76c28 12 40 38 31 70M112-80c18 24 12 50-8 74" fill="none" stroke="#617554" stroke-width="8" stroke-linecap="round"/>
+      <path d="M56-18h66l-12 36H68z" fill="#c9b796"/>
+    </g>
+    <g transform="translate(930 574)">
+      <ellipse cx="105" cy="118" rx="130" ry="22" fill="#46311f" opacity=".15"/>
+      <rect x="0" y="0" width="220" height="46" rx="23" fill="#b3865b"/>
+      <path d="M35 40l-22 138M186 40l22 138" stroke="#6e4f36" stroke-width="13" stroke-linecap="round"/>
+      <circle cx="110" cy="-36" r="34" fill="#e8dac8"/>
+      <path d="M78-1h70l-10 29H88z" fill="#b3865b"/>
+    </g>
+  </g>
+  <ellipse cx="768" cy="742" rx="374" ry="48" fill="#5a3a22" opacity=".13"/>
+</svg>
