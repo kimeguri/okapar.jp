@@ -930,6 +930,10 @@
       }
 
       .summary-lead {
+        display: flex;
+        min-height: 100%;
+        flex-direction: column;
+        align-items: flex-start;
         background:
           linear-gradient(135deg, rgba(197, 154, 104, 0.26), transparent 62%),
           var(--deep);
@@ -943,6 +947,12 @@
       .summary-lead p {
         margin: 0;
         color: rgba(255, 255, 255, 0.8);
+      }
+
+      .summary-action {
+        width: 100%;
+        margin-top: auto;
+        padding-top: 30px;
       }
 
       .summary-card {
@@ -1265,6 +1275,12 @@
         margin-top: 12px;
       }
 
+      .contact-panel.line-panel .button {
+        width: min(100%, 190px);
+        margin-top: 0;
+        justify-self: center;
+      }
+
       .contact-side {
         display: grid;
         width: 260px;
@@ -1281,6 +1297,13 @@
       .contact-panel.social-panel {
         display: grid;
         justify-items: center;
+        text-align: center;
+      }
+
+      .contact-panel.line-panel {
+        display: grid;
+        min-height: 112px;
+        place-items: center;
         text-align: center;
       }
 
@@ -2044,7 +2067,9 @@
             <p>
               長い作業の記録の前に、MOSAさんの暮らしに起きた変化を短くまとめました。
             </p>
-            <a class="movie-link" href="#story-movies">動画で見る</a>
+            <div class="summary-action">
+              <a class="movie-link" href="#story-movies">動画で見る</a>
+            </div>
           </div>
           <article class="summary-card">
             <span>BEFORE</span>
@@ -2211,8 +2236,7 @@
                 </a>
               </div>
             </div>
-            <div class="contact-panel" aria-label="LINE相談リンク">
-              <p class="contact-cta-label">ご相談はこちら</p>
+            <div class="contact-panel line-panel" aria-label="LINE相談リンク">
               <a class="button" href="https://lin.ee/uwDvG7Rc" target="_blank" rel="noopener" aria-label="LINEで相談する">LINEで相談する</a>
             </div>
           </div>
