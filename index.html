@@ -494,6 +494,159 @@
         min-height: 168px;
       }
 
+      .detail-band {
+        overflow: hidden;
+        background:
+          linear-gradient(135deg, rgba(197, 154, 104, 0.13), transparent 38%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0)),
+          var(--paper);
+      }
+
+      .detail-layout {
+        display: grid;
+        grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
+        gap: 48px;
+        align-items: end;
+      }
+
+      .detail-layout p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .detail-tiles {
+        display: grid;
+        grid-template-columns: 1.16fr 0.92fr 0.92fr;
+        gap: 18px;
+        margin-top: 38px;
+      }
+
+      .detail-tile {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: var(--soft-shadow);
+      }
+
+      .detail-visual {
+        position: relative;
+        height: 168px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 78% 18%, rgba(191, 106, 84, 0.16), transparent 24%),
+          linear-gradient(135deg, rgba(117, 132, 111, 0.18), rgba(247, 237, 229, 0.8));
+      }
+
+      .detail-visual::after {
+        content: "";
+        position: absolute;
+        inset: auto 18px 18px;
+        height: 2px;
+        border-radius: 999px;
+        background: rgba(48, 45, 41, 0.22);
+      }
+
+      .detail-visual span {
+        position: absolute;
+        display: block;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.74);
+        box-shadow: 0 16px 32px rgba(63, 51, 45, 0.11);
+      }
+
+      .detail-visual.books span:nth-child(1) {
+        left: 32px;
+        bottom: 34px;
+        width: 28px;
+        height: 84px;
+        background: #bf6a54;
+      }
+
+      .detail-visual.books span:nth-child(2) {
+        left: 68px;
+        bottom: 34px;
+        width: 34px;
+        height: 112px;
+        background: #f7ede5;
+      }
+
+      .detail-visual.books span:nth-child(3) {
+        left: 112px;
+        bottom: 34px;
+        width: 38px;
+        height: 96px;
+        background: #75846f;
+      }
+
+      .detail-visual.fabric span:nth-child(1) {
+        left: 38px;
+        right: 44px;
+        bottom: 42px;
+        height: 48px;
+        transform: skewX(-10deg);
+        background: #f7ede5;
+      }
+
+      .detail-visual.fabric span:nth-child(2) {
+        left: 76px;
+        right: 30px;
+        bottom: 74px;
+        height: 44px;
+        transform: skewX(-10deg);
+        background: rgba(191, 106, 84, 0.64);
+      }
+
+      .detail-visual.fabric span:nth-child(3) {
+        left: 58px;
+        bottom: 112px;
+        width: 96px;
+        height: 10px;
+        background: rgba(48, 45, 41, 0.26);
+      }
+
+      .detail-visual.kitchen span:nth-child(1) {
+        left: 34px;
+        right: 34px;
+        bottom: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .detail-visual.kitchen span:nth-child(2) {
+        left: 52px;
+        bottom: 74px;
+        width: 64px;
+        height: 58px;
+        border-radius: 8px 8px 18px 18px;
+        background: #3f332d;
+      }
+
+      .detail-visual.kitchen span:nth-child(3) {
+        right: 54px;
+        bottom: 74px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #c59a68;
+      }
+
+      .detail-tile h3,
+      .detail-tile p {
+        margin-left: 22px;
+        margin-right: 22px;
+      }
+
+      .detail-tile h3 {
+        margin-top: 20px;
+      }
+
+      .detail-tile p {
+        margin-bottom: 24px;
+        color: var(--muted);
+      }
+
       .care-grid {
         display: grid;
         grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
@@ -607,26 +760,145 @@
 
       .steps {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 44px;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 48px;
         counter-reset: step;
+        position: relative;
+      }
+
+      .steps::before {
+        content: "";
+        position: absolute;
+        top: 34px;
+        bottom: 34px;
+        left: 27px;
+        width: 1px;
+        background: linear-gradient(180deg, rgba(191, 106, 84, 0.25), rgba(117, 132, 111, 0.32));
       }
 
       .step {
-        position: relative;
-        min-height: 230px;
-        padding-top: 64px;
+        display: grid;
+        grid-template-columns: 54px minmax(0, 1fr) minmax(190px, 0.4fr);
+        gap: 22px;
+        align-items: start;
+        min-height: 0;
+        padding: 28px 30px;
       }
 
       .step::before {
         counter-increment: step;
         content: "0" counter(step);
-        position: absolute;
-        top: 22px;
-        left: 24px;
-        color: var(--leaf);
+        position: relative;
+        z-index: 1;
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--deep);
+        color: var(--white);
+        box-shadow: 0 0 0 8px var(--paper);
+        font-size: 0.8rem;
         font-weight: 800;
+      }
+
+      .step h3 {
+        margin-bottom: 8px;
+      }
+
+      .step-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .step-meta span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        border: 1px solid rgba(48, 45, 41, 0.13);
+        border-radius: 999px;
+        background: rgba(247, 237, 229, 0.72);
+        padding: 4px 10px;
+        color: var(--deep);
+        font-size: 0.8rem;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .program-assurance {
+        display: grid;
+        grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
+        gap: 24px;
+        margin-top: 34px;
+        align-items: stretch;
+      }
+
+      .assurance-lead,
+      .assurance-item {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: var(--soft-shadow);
+      }
+
+      .assurance-lead {
+        padding: 28px;
+        background:
+          linear-gradient(135deg, rgba(191, 106, 84, 0.12), transparent 52%),
+          var(--warm);
+      }
+
+      .assurance-lead p {
+        margin: 14px 0 0;
+        color: var(--muted);
+      }
+
+      .text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+        color: var(--deep);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .text-link::after {
+        content: "";
+        width: 32px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.55;
+      }
+
+      .assurance-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .assurance-item {
+        padding: 22px;
+      }
+
+      .assurance-item span {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--rose);
+        font-size: 0.8rem;
+        font-weight: 800;
+      }
+
+      .assurance-item h3 {
+        font-size: 1.02rem;
+      }
+
+      .assurance-item p {
+        margin: 0;
+        color: var(--muted);
       }
 
       .case {
@@ -717,6 +989,54 @@
         color: var(--deep);
         font-size: 0.84rem;
         font-weight: 700;
+      }
+
+      .story-summary {
+        display: grid;
+        grid-template-columns: minmax(240px, 0.78fr) repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 38px;
+      }
+
+      .summary-lead,
+      .summary-card {
+        border-radius: 8px;
+        padding: 24px;
+        box-shadow: var(--soft-shadow);
+      }
+
+      .summary-lead {
+        background:
+          linear-gradient(135deg, rgba(197, 154, 104, 0.26), transparent 62%),
+          var(--deep);
+        color: var(--white);
+      }
+
+      .summary-lead .section-kicker {
+        color: #f2dfd4;
+      }
+
+      .summary-lead p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .summary-card {
+        border: 1px solid var(--line);
+        background: var(--white);
+      }
+
+      .summary-card span {
+        display: inline-block;
+        margin-bottom: 12px;
+        color: var(--rose);
+        font-size: 0.8rem;
+        font-weight: 800;
+      }
+
+      .summary-card p {
+        margin: 0;
+        color: var(--muted);
       }
 
       .story-highlights {
@@ -843,6 +1163,27 @@
         max-width: 620px;
         margin: 0;
         color: var(--muted);
+      }
+
+      .video-head-copy {
+        display: grid;
+        justify-items: end;
+        gap: 12px;
+      }
+
+      .movie-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        border: 1px solid rgba(191, 106, 84, 0.28);
+        border-radius: 999px;
+        background: var(--white);
+        padding: 0 16px;
+        color: var(--deep);
+        font-size: 0.88rem;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 10px 22px rgba(63, 51, 45, 0.08);
       }
 
       .video-grid {
@@ -1131,6 +1472,10 @@
         height: 42px;
       }
 
+      .mobile-line-cta {
+        display: none;
+      }
+
       @media (max-width: 900px) {
         .site-header {
           align-items: flex-start;
@@ -1157,10 +1502,13 @@
         .case,
         .care-grid,
         .contact-box,
+        .detail-layout,
         .for-you-head,
         .flow-head,
+        .program-assurance,
         .program-head,
         .story-head,
+        .story-summary,
         .story-grid,
         .story-result {
           grid-template-columns: 1fr;
@@ -1170,11 +1518,34 @@
         .targets,
         .flow-cards,
         .contact-options,
+        .detail-tiles,
+        .assurance-list,
         .steps,
         .story-highlights,
         .tidyist,
         .video-grid {
           grid-template-columns: 1fr;
+        }
+
+        .steps::before {
+          left: 23px;
+        }
+
+        .step {
+          grid-template-columns: 46px minmax(0, 1fr);
+          gap: 14px 18px;
+          padding: 24px;
+        }
+
+        .step::before {
+          width: 40px;
+          height: 40px;
+          box-shadow: 0 0 0 7px var(--paper);
+        }
+
+        .step-meta {
+          grid-column: 2;
+          justify-content: flex-start;
         }
 
         .case-panel {
@@ -1188,6 +1559,10 @@
         .video-head {
           align-items: flex-start;
           flex-direction: column;
+        }
+
+        .video-head-copy {
+          justify-items: start;
         }
 
         .contact-box {
@@ -1218,6 +1593,33 @@
         }
       }
 
+      @media (max-width: 760px) {
+        body {
+          padding-bottom: 84px;
+        }
+
+        .mobile-line-cta {
+          position: fixed;
+          z-index: 40;
+          left: auto;
+          right: 16px;
+          bottom: max(14px, env(safe-area-inset-bottom));
+          display: inline-flex;
+          min-width: 112px;
+          min-height: 48px;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(255, 255, 255, 0.4);
+          border-radius: 999px;
+          background: #06c755;
+          padding: 0 18px;
+          color: var(--white);
+          font-weight: 800;
+          text-decoration: none;
+          box-shadow: 0 14px 28px rgba(33, 27, 23, 0.2);
+        }
+      }
+
       @media (max-width: 520px) {
         .hero {
           min-height: 90svh;
@@ -1244,6 +1646,10 @@
         .section {
           padding-top: 64px;
           padding-bottom: 64px;
+        }
+
+        .detail-visual {
+          height: 142px;
         }
 
         .button {
@@ -1446,6 +1852,49 @@
         </div>
       </section>
 
+      <section class="section detail-band" id="details" aria-label="暮らしのディテール">
+        <div class="wrap detail-layout">
+          <div>
+            <p class="section-kicker">DETAIL</p>
+            <h2>小さな場所が、暮らしを支える。</h2>
+          </div>
+          <p>
+            住まいが整うとき、変わるのは大きな収納だけではありません。
+            本が戻る場所、布ものを休ませる場所、台所で手が動く流れ。
+            日々の小さな場所がはたらき始めることで、暮らし全体が少しずつなめらかになります。
+          </p>
+        </div>
+        <div class="wrap detail-tiles">
+          <article class="detail-tile">
+            <div class="detail-visual books" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3>本が戻る場所</h3>
+            <p>学びや趣味に戻りやすいよう、持ち物の役割が見える状態をつくります。</p>
+          </article>
+          <article class="detail-tile">
+            <div class="detail-visual fabric" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3>布ものの休む場所</h3>
+            <p>洗う、干す、しまう流れを見直し、毎日の動きが重くならないように整えます。</p>
+          </article>
+          <article class="detail-tile">
+            <div class="detail-visual kitchen" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3>台所の流れ</h3>
+            <p>調理や片づけがしやすい場所づくりで、自炊や食事の時間を支えます。</p>
+          </article>
+        </div>
+      </section>
+
       <section class="section warm" id="care">
         <div class="wrap care-grid">
           <div class="care-lead">
@@ -1500,20 +1949,44 @@
         </div>
         <div class="wrap steps">
           <article class="step">
-            <h3>ヒアリング</h3>
-            <p>今の暮らし、困っていること、大切にしたいことを丁寧に伺います。</p>
+            <div class="step-body">
+              <h3>初回相談</h3>
+              <p>LINEから、今の状況や気になっていることを伺います。まだ依頼するか決めていない段階でも大丈夫です。</p>
+            </div>
+            <div class="step-meta" aria-label="初回相談の目安">
+              <span>LINE</span>
+              <span>30分目安</span>
+            </div>
           </article>
           <article class="step">
-            <h3>打ち合わせ</h3>
-            <p>望む暮らしと住まいの距離を見つめ、作業の方向を一緒に決めます。</p>
+            <div class="step-body">
+              <h3>訪問前ヒアリング</h3>
+              <p>暮らしのリズム、困りごと、大切にしたい時間を整理し、作業範囲と進め方を一緒に確認します。</p>
+            </div>
+            <div class="step-meta" aria-label="訪問前ヒアリングの目安">
+              <span>事前確認</span>
+              <span>見積り</span>
+            </div>
           </article>
           <article class="step">
-            <h3>Tidy up</h3>
-            <p>一緒に手を動かしながら、物の役割と空間のはたらきを整えます。</p>
+            <div class="step-body">
+              <h3>Tidy up当日</h3>
+              <p>一緒に手を動かしながら、物の役割と空間のはたらきを整え、掃除や収納が続きやすい仕組みをつくります。</p>
+            </div>
+            <div class="step-meta" aria-label="Tidy up当日の目安">
+              <span>Tidyist訪問</span>
+              <span>一緒に整理</span>
+            </div>
           </article>
           <article class="step">
-            <h3>アフターフォロー</h3>
-            <p>暮らしの中で自然に続くよう、質問や再訪問を通して支えます。</p>
+            <div class="step-body">
+              <h3>3ヶ月フォロー</h3>
+              <p>Tidy up後の質問や、契約期間内の再訪問を通して、暮らしの中で自然に続く形を育てます。</p>
+            </div>
+            <div class="step-meta" aria-label="3ヶ月フォローの目安">
+              <span>質問対応</span>
+              <span>再訪問1回</span>
+            </div>
           </article>
         </div>
 
@@ -1532,6 +2005,40 @@
               作業のリズムを整えてフォローする伴奏者です。
             </p>
           </article>
+        </div>
+
+        <div class="wrap program-assurance">
+          <div class="assurance-lead">
+            <p class="section-kicker">BEFORE CONTACT</p>
+            <h3>依頼前に、安心して確認できること。</h3>
+            <p>
+              料金や作業範囲は、状況を伺ったうえで事前にお伝えします。
+              訪問できる地域や日程、当日までに準備することも、一つずつ確認できます。
+            </p>
+            <a class="text-link" href="https://lin.ee/uwDvG7Rc" target="_blank" rel="noopener" aria-label="LINEで依頼前の確認をする">LINEで確認する</a>
+          </div>
+          <div class="assurance-list" aria-label="依頼前の安心材料">
+            <article class="assurance-item">
+              <span>CONSULT</span>
+              <h3>初回相談</h3>
+              <p>まずはLINEで、今の状況や気になっていることを短く送っていただけます。</p>
+            </article>
+            <article class="assurance-item">
+              <span>ESTIMATE</span>
+              <h3>費用感と作業範囲</h3>
+              <p>内容を伺ったうえで、作業範囲と費用感を事前にお伝えします。</p>
+            </article>
+            <article class="assurance-item">
+              <span>AREA</span>
+              <h3>訪問エリア</h3>
+              <p>訪問できる地域や日程は、ご相談内容に合わせて個別に確認します。</p>
+            </article>
+            <article class="assurance-item">
+              <span>PREP</span>
+              <h3>事前準備</h3>
+              <p>無理に片づけておく必要はありません。必要な準備は一緒に整理します。</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -1606,6 +2113,31 @@
           </div>
         </div>
 
+        <div class="wrap story-summary" aria-label="MOSAさんの事例の要約">
+          <div class="summary-lead">
+            <p class="section-kicker">SUMMARY</p>
+            <p>
+              長い作業の記録の前に、MOSAさんの暮らしに起きた変化を短くまとめました。
+            </p>
+            <a class="movie-link" href="#story-movies">動画で見る</a>
+          </div>
+          <article class="summary-card">
+            <span>BEFORE</span>
+            <h3>掃除や自炊に戻りにくい状態</h3>
+            <p>本、衣類、水回りの仕組みが不安定で、床に物や埃が溜まりやすくなっていました。</p>
+          </article>
+          <article class="summary-card">
+            <span>TIDY UP</span>
+            <h3>望む暮らしに合わせて整える</h3>
+            <p>本棚、デスク、ベッド、衣類収納、キッチン、水回りの仕組みを2日間で整えました。</p>
+          </article>
+          <article class="summary-card">
+            <span>AFTER</span>
+            <h3>暮らしが動き出す</h3>
+            <p>水拭きが習慣になり、自炊や科学・物理の学びに戻れる流れが生まれました。</p>
+          </article>
+        </div>
+
         <div class="wrap story-highlights" aria-label="MOSAさんの事例で起きた変化">
           <article class="story-highlight">
             <span>CHANGE 01</span>
@@ -1678,15 +2210,18 @@
           </blockquote>
         </div>
 
-        <div class="wrap story-videos">
+        <div class="wrap story-videos" id="story-movies">
           <div class="video-head">
             <div>
               <p class="section-kicker">MOVIE</p>
               <h2>MOSAさんのTidy up動画</h2>
             </div>
-            <p>
-              OKAPAプログラムの空気感や、住まいが少しずつ動き出していく様子を動画でもご覧いただけます。
-            </p>
+            <div class="video-head-copy">
+              <p>
+                OKAPAプログラムの空気感や、住まいが少しずつ動き出していく様子を動画でもご覧いただけます。
+              </p>
+              <a class="movie-link" href="https://youtube.com/@okatazukenopartner?si=C1v0SNw3_c-wD08X" target="_blank" rel="noopener" aria-label="OKAPAのYouTubeチャンネルを見る">YouTubeチャンネルを見る</a>
+            </div>
           </div>
           <div class="video-grid">
             <article class="video-card">
@@ -1778,5 +2313,6 @@
         <span>暮らしを整えるTidy upサービス</span>
       </div>
     </footer>
+    <a class="mobile-line-cta" href="https://lin.ee/uwDvG7Rc" target="_blank" rel="noopener" aria-label="LINEで相談する">LINE相談</a>
   </body>
 </html>
