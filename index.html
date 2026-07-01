@@ -935,9 +935,10 @@
 
       .story-summary {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
         margin-top: 42px;
+        max-width: 920px;
         align-items: stretch;
       }
 
@@ -949,9 +950,9 @@
       }
 
       .summary-lead {
-        display: flex;
+        display: grid;
         min-height: 100%;
-        flex-direction: column;
+        gap: 16px;
         align-items: flex-start;
         background:
           linear-gradient(135deg, rgba(197, 154, 104, 0.26), transparent 62%),
@@ -969,35 +970,43 @@
       }
 
       .summary-lead p:not(.section-kicker) {
-        max-width: 22em;
+        max-width: 38em;
         line-height: 1.9;
       }
 
       .summary-action {
         width: 100%;
-        margin-top: auto;
-        padding-top: 30px;
+        margin-top: 0;
+        padding-top: 8px;
       }
 
       .summary-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(84px, 0.16fr) minmax(0, 1fr);
+        gap: 8px 24px;
+        align-items: start;
         border: 1px solid var(--line);
         background: var(--white);
       }
 
       .summary-card h3 {
+        grid-column: 2;
         max-width: 16em;
         margin-bottom: 14px;
       }
 
       .summary-card span {
+        grid-row: 1 / span 2;
         display: inline-block;
-        margin-bottom: 12px;
+        margin: 0;
         color: var(--rose);
         font-size: 0.8rem;
         font-weight: 800;
       }
 
       .summary-card p {
+        grid-column: 2;
         margin: 0;
         color: var(--muted);
         line-height: 1.85;
@@ -1005,30 +1014,41 @@
 
       .story-highlights {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 36px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        margin-top: 30px;
+        max-width: 920px;
       }
 
       .story-highlight {
         position: relative;
+        display: grid;
+        grid-template-columns: minmax(94px, 0.16fr) minmax(0, 1fr);
+        gap: 8px 24px;
+        align-items: start;
         overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: linear-gradient(180deg, var(--white), rgba(247, 237, 229, 0.52));
-        padding: 24px;
+        padding: 24px 28px;
         box-shadow: var(--soft-shadow);
       }
 
       .story-highlight span {
+        grid-row: 1 / span 2;
         display: inline-block;
-        margin-bottom: 10px;
+        margin: 0;
         color: var(--rose);
         font-size: 0.82rem;
         font-weight: 800;
       }
 
+      .story-highlight h3 {
+        grid-column: 2;
+      }
+
       .story-highlight p {
+        grid-column: 2;
         margin: 0;
         color: var(--muted);
         line-height: 1.85;
@@ -1038,7 +1058,8 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         gap: 18px;
-        margin-top: 48px;
+        margin-top: 34px;
+        max-width: 920px;
         align-items: start;
       }
 
@@ -1097,9 +1118,10 @@
 
       .story-result {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.58fr);
-        gap: 34px;
-        margin-top: 28px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        max-width: 920px;
+        margin-top: 18px;
         padding: 30px;
         align-items: start;
       }
@@ -1199,12 +1221,6 @@
         margin: 6px 4px 2px;
         color: var(--muted);
         font-size: 0.92rem;
-      }
-
-      @media (min-width: 901px) {
-        .story-highlight:last-child {
-          grid-column: 1 / -1;
-        }
       }
 
       .tidyist {
@@ -1565,6 +1581,24 @@
 
         .story-panel {
           position: static;
+        }
+
+        .summary-card,
+        .story-highlight {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .summary-card h3,
+        .summary-card p,
+        .story-highlight h3,
+        .story-highlight p {
+          grid-column: 1;
+        }
+
+        .summary-card span,
+        .story-highlight span {
+          grid-row: auto;
         }
 
         .story-note {
