@@ -876,15 +876,24 @@
 
       .story-head {
         display: grid;
-        grid-template-columns: minmax(380px, 0.92fr) minmax(0, 1.08fr);
-        gap: 52px;
+        grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+        gap: clamp(32px, 4vw, 52px);
         align-items: start;
       }
 
       .story-intro p {
-        max-width: 670px;
+        max-width: 760px;
         margin: 0;
         color: var(--muted);
+      }
+
+      .story h2,
+      .story h3 {
+        text-wrap: balance;
+      }
+
+      .story p {
+        text-wrap: pretty;
       }
 
       .story h2 .heading-line + .heading-line {
@@ -892,10 +901,19 @@
       }
 
       .story-title-sub {
-        max-width: 620px;
+        max-width: 680px;
         color: var(--deep);
         font-size: 0.76em;
-        line-height: 1.42;
+        line-height: 1.5;
+        text-wrap: pretty;
+      }
+
+      .story-title-sub .nobr {
+        display: inline-block;
+      }
+
+      .story-title-tail {
+        display: inline-block;
       }
 
       .story-tags {
@@ -917,15 +935,16 @@
 
       .story-summary {
         display: grid;
-        grid-template-columns: minmax(240px, 0.78fr) repeat(3, minmax(0, 1fr));
-        gap: 14px;
-        margin-top: 38px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 42px;
+        align-items: stretch;
       }
 
       .summary-lead,
       .summary-card {
         border-radius: 8px;
-        padding: 24px;
+        padding: clamp(24px, 2.4vw, 30px);
         box-shadow: var(--soft-shadow);
       }
 
@@ -949,6 +968,11 @@
         color: rgba(255, 255, 255, 0.8);
       }
 
+      .summary-lead p:not(.section-kicker) {
+        max-width: 22em;
+        line-height: 1.9;
+      }
+
       .summary-action {
         width: 100%;
         margin-top: auto;
@@ -958,6 +982,11 @@
       .summary-card {
         border: 1px solid var(--line);
         background: var(--white);
+      }
+
+      .summary-card h3 {
+        max-width: 16em;
+        margin-bottom: 14px;
       }
 
       .summary-card span {
@@ -971,13 +1000,14 @@
       .summary-card p {
         margin: 0;
         color: var(--muted);
+        line-height: 1.85;
       }
 
       .story-highlights {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-        margin-top: 34px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 36px;
       }
 
       .story-highlight {
@@ -986,7 +1016,7 @@
         border: 1px solid var(--line);
         border-radius: 8px;
         background: linear-gradient(180deg, var(--white), rgba(247, 237, 229, 0.52));
-        padding: 22px;
+        padding: 24px;
         box-shadow: var(--soft-shadow);
       }
 
@@ -1001,12 +1031,13 @@
       .story-highlight p {
         margin: 0;
         color: var(--muted);
+        line-height: 1.85;
       }
 
       .story-grid {
         display: grid;
-        grid-template-columns: minmax(320px, 0.74fr) minmax(0, 1.26fr);
-        gap: 28px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
         margin-top: 48px;
         align-items: start;
       }
@@ -1023,9 +1054,7 @@
       }
 
       .story-panel {
-        position: sticky;
-        top: 104px;
-        padding: 30px;
+        padding: 32px 34px;
         background: var(--warm);
       }
 
@@ -1036,15 +1065,23 @@
         color: var(--muted);
       }
 
+      .story-panel p:not(.section-kicker) {
+        max-width: 780px;
+      }
+
       .story-notes {
         display: grid;
-        gap: 18px;
+        gap: 16px;
         counter-reset: story-note;
       }
 
       .story-note {
         position: relative;
-        padding: 28px 28px 28px 82px;
+        padding: 30px 34px 30px 88px;
+      }
+
+      .story-note p {
+        max-width: 820px;
       }
 
       .story-note::before {
@@ -1162,6 +1199,12 @@
         margin: 6px 4px 2px;
         color: var(--muted);
         font-size: 0.92rem;
+      }
+
+      @media (min-width: 901px) {
+        .story-highlight:last-child {
+          grid-column: 1 / -1;
+        }
       }
 
       .tidyist {
@@ -1462,6 +1505,10 @@
           font-size: 2rem;
         }
 
+        .story-title-sub {
+          font-size: 0.68em;
+        }
+
         .lead-grid,
         .case,
         .care-grid,
@@ -1518,6 +1565,20 @@
 
         .story-panel {
           position: static;
+        }
+
+        .story-note {
+          padding: 28px 24px;
+        }
+
+        .story-note::before {
+          position: static;
+          display: block;
+          margin-bottom: 12px;
+        }
+
+        .story-note p {
+          max-width: none;
         }
 
         .video-head {
@@ -2044,7 +2105,7 @@
         <div class="wrap story-head">
           <div>
             <p class="section-kicker">STORY</p>
-            <h2><span class="heading-line">暮らしのストーリー</span><span class="heading-line story-title-sub">「菌と共生する暮らし」を形にする。</span></h2>
+            <h2><span class="heading-line">暮らしのストーリー</span><span class="heading-line story-title-sub"><span class="nobr">「菌と共生する暮らし」</span><span class="story-title-tail">を形にする。</span></span></h2>
           </div>
           <div class="story-intro">
             <p>
