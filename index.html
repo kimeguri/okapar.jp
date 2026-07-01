@@ -353,7 +353,7 @@
         position: relative;
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
-        gap: 24px;
+        gap: clamp(20px, 3vw, 32px);
         align-items: center;
         margin-top: 38px;
         overflow: hidden;
@@ -383,24 +383,25 @@
       }
 
       .soft-cta p {
+        max-width: 56em;
         margin: 0;
         color: var(--muted);
       }
 
 
-            .soft-cta .button {
-              background: var(--rose);
-              color: var(--white);
-              white-space: nowrap;
-            }
+      .soft-cta .button {
+        background: var(--rose);
+        color: var(--white);
+        white-space: nowrap;
+      }
 
-            .story-soft-cta {
-              margin-top: 44px;
-            }
+      .story-soft-cta {
+        margin-top: 44px;
+      }
 
-            .story-soft-cta h3 {
-              font-size: 1.06rem;
-            }
+      .story-soft-cta h3 {
+        font-size: 1.06rem;
+      }
 
       .lead-grid {
         display: grid;
@@ -912,13 +913,16 @@
         opacity: 0.55;
       }
 
-            .assurance-list {
-              display: grid;
-              grid-template-columns: repeat(2, minmax(0, 1fr));
-              gap: 14px;
-            }
+      .assurance-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
 
       .assurance-item {
+        display: grid;
+        align-content: center;
+        min-height: 204px;
         padding: 22px;
       }
 
@@ -1163,7 +1167,8 @@
         display: grid;
         grid-template-columns: minmax(84px, 0.16fr) minmax(0, 1fr);
         gap: 8px 24px;
-        align-items: start;
+        align-items: center;
+        align-content: center;
         border: 1px solid var(--line);
         background: var(--white);
       }
@@ -1190,61 +1195,63 @@
         line-height: 1.85;
       }
 
-            .story-highlights {
-              display: grid;
-              grid-template-columns: minmax(0, 1fr);
-              gap: 12px;
-              margin-top: 30px;
-              max-width: 920px;
-            }
+      .story-highlights {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        margin-top: 30px;
+        max-width: 920px;
+      }
 
-            .story-bridge {
-              display: grid;
-              grid-template-columns: minmax(130px, 0.22fr) minmax(0, 1fr);
-              gap: 18px 26px;
-              align-items: start;
-              max-width: 920px;
-              margin-top: 34px;
-              border: 1px solid rgba(48, 45, 41, 0.12);
-              border-left: 5px solid var(--gold);
-              border-radius: 8px;
-              background:
-                linear-gradient(135deg, rgba(117, 132, 111, 0.1), transparent 48%),
-                rgba(255, 255, 255, 0.76);
-              padding: 22px 26px;
-              box-shadow: 0 12px 28px rgba(63, 51, 45, 0.07);
-            }
+      .story-bridge {
+        display: grid;
+        grid-template-columns: minmax(130px, 0.22fr) minmax(0, 1fr);
+        gap: 16px 26px;
+        align-items: center;
+        max-width: 920px;
+        margin-top: 34px;
+        border: 1px solid rgba(48, 45, 41, 0.12);
+        border-left: 5px solid var(--gold);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(117, 132, 111, 0.1), transparent 48%),
+          rgba(255, 255, 255, 0.76);
+        padding: 24px 28px;
+        box-shadow: 0 12px 28px rgba(63, 51, 45, 0.07);
+      }
 
-            .story-bridge span {
-              color: var(--rose);
-              font-size: 0.78rem;
-              font-weight: 800;
-            }
+      .story-bridge span {
+        color: var(--rose);
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
 
-            .story-bridge h3 {
-              margin-bottom: 6px;
-              font-size: 1rem;
-            }
+      .story-bridge h3 {
+        margin-bottom: 6px;
+        font-size: 1rem;
+      }
 
-            .story-bridge p {
-              margin: 0;
-              color: var(--muted);
-              line-height: 1.82;
-            }
+      .story-bridge p {
+        max-width: 44em;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.82;
+      }
 
-            .story-bridge-muted {
-              border-left-color: var(--leaf);
-              background:
-                linear-gradient(135deg, rgba(197, 154, 104, 0.12), transparent 52%),
-                rgba(255, 255, 255, 0.76);
-            }
+      .story-bridge-muted {
+        border-left-color: var(--leaf);
+        background:
+          linear-gradient(135deg, rgba(197, 154, 104, 0.12), transparent 52%),
+          rgba(255, 255, 255, 0.76);
+      }
 
       .story-highlight {
         position: relative;
         display: grid;
         grid-template-columns: minmax(94px, 0.16fr) minmax(0, 1fr);
         gap: 8px 24px;
-        align-items: start;
+        align-items: center;
+        align-content: center;
         overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -1317,6 +1324,8 @@
 
       .story-note {
         position: relative;
+        display: grid;
+        align-content: center;
         padding: 30px 34px 30px 88px;
       }
 
@@ -1516,7 +1525,7 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
         gap: 40px;
-        align-items: end;
+        align-items: center;
       }
 
       .contact p {
@@ -1534,6 +1543,9 @@
       }
 
       .contact-option {
+        display: flex;
+        min-height: 64px;
+        align-items: center;
         border: 1px solid rgba(255, 255, 255, 0.22);
         border-radius: 8px;
         background: rgba(255, 255, 255, 0.08);
@@ -1575,6 +1587,8 @@
 
       .contact-panel.social-panel {
         display: grid;
+        align-content: center;
+        gap: 12px;
         justify-items: center;
         text-align: center;
       }
@@ -1599,7 +1613,7 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        margin-top: 12px;
+        margin-top: 0;
       }
 
       .social-link {
@@ -1650,8 +1664,8 @@
         color: #050505;
       }
 
-            .site-footer {
-              padding: 42px clamp(20px, 6%, 72px);
+      .site-footer {
+        padding: 42px clamp(20px, 6%, 72px);
         background:
           radial-gradient(circle at 50% 0%, rgba(191, 106, 84, 0.16), transparent 34%),
           #2c2521;
@@ -1676,18 +1690,19 @@
         line-height: 1.45;
       }
 
-            .footer-tagline {
-              margin: 0;
-              color: rgba(255, 255, 255, 0.64);
-              line-height: 1.8;
-            }
+      .footer-tagline {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.64);
+        line-height: 1.8;
+      }
 
-            .footer-note {
-              max-width: 560px;
-              margin: 0;
-              color: rgba(255, 255, 255, 0.76);
-              line-height: 1.85;
-            }
+      .footer-note {
+        max-width: 560px;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.76);
+        line-height: 1.85;
+        text-wrap: balance;
+      }
 
       .footer-links {
         display: flex;
@@ -1761,21 +1776,21 @@
         .flow-head,
         .program-assurance,
         .program-head,
-              .section-guide,
-              .soft-cta,
-              .story-head,
-              .story-bridge,
-              .story-summary,
-              .story-grid,
-              .story-result,
-              .trust-strip {
-                grid-template-columns: 1fr;
-              }
+        .section-guide,
+        .soft-cta,
+        .story-head,
+        .story-bridge,
+        .story-summary,
+        .story-grid,
+        .story-result,
+        .trust-strip {
+          grid-template-columns: 1fr;
+        }
 
-              .section,
-              .story-videos {
-                scroll-margin-top: 112px;
-              }
+        .section,
+        .story-videos {
+          scroll-margin-top: 112px;
+        }
 
         .principles,
         .targets,
@@ -1823,6 +1838,10 @@
         .story-highlight {
           grid-template-columns: 1fr;
           gap: 10px;
+        }
+
+        .assurance-item {
+          min-height: 168px;
         }
 
         .summary-card h3,
@@ -1919,7 +1938,7 @@
         }
       }
 
-            @media (max-width: 520px) {
+      @media (max-width: 520px) {
         .hero {
           min-height: 90svh;
         }
@@ -1951,13 +1970,13 @@
           aspect-ratio: 4 / 3;
         }
 
-              .button {
-                width: 100%;
-              }
+        .button {
+          width: 100%;
+        }
 
-              .story-bridge {
-                padding: 20px;
-              }
+        .story-bridge {
+          padding: 22px;
+        }
 
         .guide-item,
         .soft-cta,
@@ -2325,11 +2344,11 @@
         <div class="wrap program-assurance">
           <div class="assurance-lead">
             <p class="section-kicker">BEFORE CONTACT</p>
-                  <h3>依頼前に、安心して確認できること。</h3>
-                  <p>
-                    料金、作業範囲、訪問できる地域、当日までに準備することは、状況を伺ったうえで事前にお伝えします。
-                    できることと、専門先に切り分けたほうがよいことも、一つずつ確認できます。
-                  </p>
+            <h3>依頼前に、安心して確認できること。</h3>
+            <p>
+              料金、作業範囲、訪問できる地域、当日までに準備することは、状況を伺ったうえで事前にお伝えします。
+              できることと、専門先に切り分けたほうがよいことも、一つずつ確認できます。
+            </p>
             <a class="text-link" href="https://lin.ee/uwDvG7Rc" target="_blank" rel="noopener" aria-label="LINEで依頼前の確認をする">LINEで確認する</a>
           </div>
           <div class="assurance-list" aria-label="依頼前の安心材料">
@@ -2348,23 +2367,23 @@
               <h3>訪問エリア</h3>
               <p>訪問できる地域や日程は、ご相談内容に合わせて個別に確認します。</p>
             </article>
-                  <article class="assurance-item">
-                    <span>PREP</span>
-                    <h3>事前準備</h3>
-                    <p>無理に片づけておく必要はありません。必要な準備は一緒に整理します。</p>
-                  </article>
-                  <article class="assurance-item">
-                    <span>CAN DO</span>
-                    <h3>一緒にできること</h3>
-                    <p>整理、収納、掃除しやすい仕組みづくり、ご家族からの相談も状況に合わせて伺います。</p>
-                  </article>
-                  <article class="assurance-item">
-                    <span>SCOPE</span>
-                    <h3>切り分けること</h3>
-                    <p>専門的な修繕、医療判断、危険を伴う作業などは、必要に応じて事前に確認します。</p>
-                  </article>
-                </div>
-              </div>
+            <article class="assurance-item">
+              <span>PREP</span>
+              <h3>事前準備</h3>
+              <p>無理に片づけておく必要はありません。必要な準備は一緒に整理します。</p>
+            </article>
+            <article class="assurance-item">
+              <span>CAN DO</span>
+              <h3>一緒にできること</h3>
+              <p>整理、収納、掃除しやすい仕組みづくり、ご家族からの相談も状況に合わせて伺います。</p>
+            </article>
+            <article class="assurance-item">
+              <span>SCOPE</span>
+              <h3>切り分けること</h3>
+              <p>専門的な修繕、医療判断、危険を伴う作業などは、必要に応じて事前に確認します。</p>
+            </article>
+          </div>
+        </div>
         <div class="wrap trust-strip" aria-label="相談前に確認できること">
           <div class="trust-strip-item">ご本人からでも、ご家族からでも相談できます。</div>
           <div class="trust-strip-item">片づけてから連絡する必要はありません。</div>
@@ -2497,11 +2516,11 @@
           </article>
         </div>
 
-              <div class="wrap story-highlights" aria-label="MOSAさんの事例で起きた変化">
-                <article class="story-highlight">
-                  <span>CHANGE 01</span>
-                  <h3>掃除しやすい部屋へ</h3>
-                  <p>床、水回り、収納の前提が整い、日々の掃除に手が伸びやすくなりました。</p>
+        <div class="wrap story-highlights" aria-label="MOSAさんの事例で起きた変化">
+          <article class="story-highlight">
+            <span>CHANGE 01</span>
+            <h3>掃除しやすい部屋へ</h3>
+            <p>床、水回り、収納の前提が整い、日々の掃除に手が伸びやすくなりました。</p>
           </article>
           <article class="story-highlight">
             <span>CHANGE 02</span>
@@ -2511,21 +2530,21 @@
           <article class="story-highlight">
             <span>CHANGE 03</span>
             <h3>水拭きが習慣に</h3>
-                  <p>3日に1回から週に1回ほど、水拭きをする流れが自然に生まれました。</p>
-                </article>
-              </div>
+            <p>3日に1回から週に1回ほど、水拭きをする流れが自然に生まれました。</p>
+          </article>
+        </div>
 
-              <div class="wrap story-bridge" aria-label="ここまでのまとめ">
-                <span>READING NOTE</span>
-                <div>
-                  <h3>ここまでで見えてきたこと</h3>
-                  <p>部屋をきれいにすることだけでなく、MOSAさんが望んでいた暮らしと住まいの機能をつなぎ直していく過程です。</p>
-                </div>
-              </div>
+        <div class="wrap story-bridge" aria-label="ここまでのまとめ">
+          <span>READING NOTE</span>
+          <div>
+            <h3>ここまでで見えてきたこと</h3>
+            <p>部屋をきれいにすることだけでなく、MOSAさんが望んでいた暮らしと住まいの機能をつなぎ直していく過程です。</p>
+          </div>
+        </div>
 
-              <div class="wrap story-chapter">
-                <span>CHAPTER 02</span>
-                <h3>望む暮らしと、住まいの距離を一緒に見つめる。</h3>
+        <div class="wrap story-chapter">
+          <span>CHAPTER 02</span>
+          <h3>望む暮らしと、住まいの距離を一緒に見つめる。</h3>
         </div>
 
         <div class="wrap story-grid">
@@ -2560,21 +2579,21 @@
                 2日目には本棚9本を組み立て、デスク、ベッド、衣類収納、キッチン、洗濯、トイレ、浴室の仕組みを整えました。
                 一人では止まりやすい大きな作業も、パートナーがいることで生活に戻れる形まで進められます。
               </p>
-                  </article>
-                </div>
-              </div>
+            </article>
+          </div>
+        </div>
 
-              <div class="wrap story-bridge story-bridge-muted" aria-label="次に読む内容">
-                <span>NEXT</span>
-                <div>
-                  <h3>次に見るのは、整えた後の暮らしです</h3>
-                  <p>仕組みができたあと、掃除、自炊、学びの時間がどのように戻っていったかを見ていきます。</p>
-                </div>
-              </div>
+        <div class="wrap story-bridge story-bridge-muted" aria-label="次に読む内容">
+          <span>NEXT</span>
+          <div>
+            <h3>次に見るのは、整えた後の暮らしです</h3>
+            <p>仕組みができたあと、掃除、自炊、学びの時間がどのように戻っていったかを見ていきます。</p>
+          </div>
+        </div>
 
-              <div class="wrap story-chapter">
-                <span>CHAPTER 03</span>
-                <h3>1ヶ月後、暮らしの中で続きはじめていたこと。</h3>
+        <div class="wrap story-chapter">
+          <span>CHAPTER 03</span>
+          <h3>1ヶ月後、暮らしの中で続きはじめていたこと。</h3>
         </div>
 
         <div class="wrap story-result">
@@ -2637,13 +2656,13 @@
             </article>
           </div>
         </div>
-              <div class="wrap soft-cta story-soft-cta">
-                <div>
-                  <h3>事例を読んで、少し近いものを感じたら。</h3>
-                  <p>ご自身の暮らしに重なること、まだ言葉になっていない不安も、LINEから短く送っていただけます。</p>
-                </div>
-                <a class="button" href="https://lin.ee/uwDvG7Rc" target="_blank" rel="noopener" aria-label="LINEでMOSAさんの事例について相談する">LINEで短く相談する</a>
-              </div>
+        <div class="wrap soft-cta story-soft-cta">
+          <div>
+            <h3>事例を読んで、少し近いものを感じたら。</h3>
+            <p>ご自身の暮らしに重なること、まだ言葉になっていない不安も、LINEから短く送っていただけます。</p>
+          </div>
+          <a class="button" href="https://lin.ee/uwDvG7Rc" target="_blank" rel="noopener" aria-label="LINEでMOSAさんの事例について相談する">LINEで短く相談する</a>
+        </div>
       </section>
 
       <section class="section contact" id="contact">
@@ -2686,12 +2705,12 @@
       </section>
     </main>
 
-          <footer class="site-footer">
-            <div class="footer-inner">
-              <div class="footer-brand">OKAPA｜お片付けのパートナー</div>
-              <p class="footer-tagline">暮らしを整えるTidy upサービス</p>
-              <p class="footer-note">住まいのあり方を一緒に見つめ、暮らしが戻っていく形を支えます。</p>
-              <div class="footer-links" aria-label="SNSリンク">
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">OKAPA｜お片付けのパートナー</div>
+        <p class="footer-tagline">暮らしを整えるTidy upサービス</p>
+        <p class="footer-note">住まいのあり方を一緒に見つめ、暮らしが戻っていく形を支えます。</p>
+        <div class="footer-links" aria-label="SNSリンク">
           <a class="social-link youtube-link" href="https://youtube.com/@okatazukenopartner?si=C1v0SNw3_c-wD08X" target="_blank" rel="noopener" aria-label="YouTubeを見る" title="YouTube">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
