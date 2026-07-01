@@ -315,6 +315,9 @@
 
       .guide-item {
         position: relative;
+        display: grid;
+        min-height: 118px;
+        align-content: center;
         border: 1px solid rgba(48, 45, 41, 0.13);
         border-radius: 8px;
         background: rgba(255, 255, 255, 0.72);
@@ -952,6 +955,9 @@
 
       .trust-strip-item {
         position: relative;
+        display: grid;
+        min-height: 86px;
+        align-content: center;
         border: 1px solid rgba(48, 45, 41, 0.12);
         border-radius: 8px;
         background: rgba(255, 255, 255, 0.74);
@@ -965,8 +971,9 @@
       .trust-strip-item::before {
         content: "";
         position: absolute;
-        top: 24px;
+        top: 50%;
         left: 20px;
+        transform: translateY(-50%);
         width: 7px;
         height: 7px;
         border-radius: 50%;
@@ -1546,13 +1553,15 @@
         display: flex;
         min-height: 64px;
         align-items: center;
+        justify-content: center;
         border: 1px solid rgba(255, 255, 255, 0.22);
         border-radius: 8px;
         background: rgba(255, 255, 255, 0.08);
-        padding: 18px;
+        padding: 18px 20px;
         color: rgba(255, 255, 255, 0.9);
         font-weight: 700;
         line-height: 1.6;
+        text-align: center;
       }
 
       .contact .button {
