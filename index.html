@@ -583,6 +583,56 @@
         color: var(--muted);
       }
 
+      .flow-tidyist {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.36fr) minmax(0, 1fr);
+        gap: 18px 32px;
+        align-items: center;
+        margin-top: 30px;
+        border: 1px solid rgba(48, 45, 41, 0.12);
+        border-left: 5px solid var(--rose);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(191, 106, 84, 0.12), transparent 46%),
+          rgba(255, 255, 255, 0.78);
+        padding: 26px 30px;
+        box-shadow: 0 14px 30px rgba(63, 51, 45, 0.08);
+      }
+
+      .flow-tidyist h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .flow-tidyist p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .flow-tidyist-copy {
+        display: grid;
+        gap: 14px;
+      }
+
+      .flow-tidyist-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .flow-tidyist-points span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        border: 1px solid rgba(191, 106, 84, 0.2);
+        border-radius: 999px;
+        background: rgba(255, 253, 249, 0.82);
+        padding: 4px 11px;
+        color: var(--deep);
+        font-size: 0.82rem;
+        font-weight: 750;
+      }
+
       .copy-block p {
         margin: 0;
         max-width: 680px;
@@ -1110,7 +1160,34 @@
       }
 
       .story-guide {
-        max-width: 920px;
+        max-width: 1020px;
+      }
+
+      .story-guide-lead {
+        display: grid;
+        grid-column: 1 / -1;
+        grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
+        gap: 18px 30px;
+        align-items: center;
+        margin-bottom: 4px;
+        border: 1px solid rgba(48, 45, 41, 0.12);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(117, 132, 111, 0.12), transparent 50%),
+          rgba(255, 255, 255, 0.78);
+        padding: 22px 26px;
+        box-shadow: 0 12px 26px rgba(63, 51, 45, 0.07);
+      }
+
+      .story-guide-lead h3 {
+        margin: 0;
+        font-size: 1.08rem;
+      }
+
+      .story-guide-lead p:not(.section-kicker) {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.82;
       }
 
       .story-chapter {
@@ -1579,6 +1656,22 @@
         margin-top: 30px;
       }
 
+      .contact-examples {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        max-width: 760px;
+        margin-top: 22px;
+      }
+
+      .contact-examples-title {
+        grid-column: 1 / -1;
+        margin: 0 0 2px;
+        color: rgba(255, 255, 255, 0.74);
+        font-size: 0.9rem;
+        font-weight: 800;
+      }
+
       .contact-option {
         display: flex;
         min-height: 64px;
@@ -1592,6 +1685,20 @@
         font-weight: 700;
         line-height: 1.6;
         text-align: center;
+      }
+
+      .contact-example {
+        display: flex;
+        min-height: 52px;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.055);
+        padding: 13px 16px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 0.94rem;
+        font-weight: 650;
+        line-height: 1.58;
       }
 
       .contact .button {
@@ -1813,12 +1920,14 @@
         .detail-layout,
         .for-you-head,
         .flow-head,
+        .flow-tidyist,
         .program-assurance,
         .program-head,
         .section-guide,
         .soft-cta,
         .story-head,
         .story-bridge,
+        .story-guide-lead,
         .story-summary,
         .story-grid,
         .story-result,
@@ -1835,6 +1944,7 @@
         .targets,
         .flow-cards,
         .contact-options,
+        .contact-examples,
         .detail-tiles,
         .assurance-list,
         .steps,
@@ -2240,6 +2350,23 @@
             <p>Tidy up後の質問や再訪問を通して、暮らしの中で続く形を育てます。</p>
           </article>
         </div>
+        <div class="wrap flow-tidyist" aria-label="Tidyistの説明">
+          <div>
+            <p class="section-kicker">TIDYIST</p>
+            <h3>暮らしに伴走する人が、一緒に進めます。</h3>
+          </div>
+          <div class="flow-tidyist-copy">
+            <p>
+              OKAPAでは、Tidy upの過程に寄り添う人をTidyistと呼んでいます。
+              ご本人の思いや判断を大切にしながら、暮らしに戻っていく形を一緒に整えます。
+            </p>
+            <div class="flow-tidyist-points" aria-label="Tidyistが大切にしていること">
+              <span>判断に寄り添う</span>
+              <span>手を動かす</span>
+              <span>続く仕組みをつくる</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="section" id="about">
@@ -2569,18 +2696,28 @@
         </div>
 
         <div class="wrap section-guide story-guide" aria-label="MOSAさんの事例の読み進め方">
+          <div class="story-guide-lead">
+            <div>
+              <p class="section-kicker">READING PATH</p>
+              <h3>読む時間に合わせて、入口を選べます。</h3>
+            </div>
+            <p>
+              まず全体像を知りたい方は要約から、OKAPAの進め方を深く知りたい方は詳しい記録から。
+              空気感を見たい方は動画からご覧いただけます。
+            </p>
+          </div>
           <a class="guide-item story-path" href="#story-summary">
-            <span>SHORT</span>
-            <strong>3分で読む要約</strong>
+            <span>START 01</span>
+            <strong>まず要約を読む</strong>
             <p>Before、Tidy up、Afterの変化を先に短く見られます。</p>
           </a>
           <a class="guide-item story-path" href="#story-detail">
-            <span>DETAIL</span>
+            <span>START 02</span>
             <strong>詳しく読む</strong>
             <p>望む暮らしが言葉になり、仕組みが整う過程を辿ります。</p>
           </a>
           <a class="guide-item story-path" href="#story-movies">
-            <span>MOVIE</span>
+            <span>START 03</span>
             <strong>動画で見る</strong>
             <p>OKAPAプログラムの空気感や、変化の様子を動画で見られます。</p>
           </a>
@@ -2781,6 +2918,13 @@
               <div class="contact-option">まだ依頼するか決めていない</div>
               <div class="contact-option">家族のことで相談したい</div>
               <div class="contact-option">何から始めればいいか分からない</div>
+            </div>
+            <div class="contact-examples" aria-label="相談例">
+              <p class="contact-examples-title">たとえば、こんな相談も大丈夫です。</p>
+              <div class="contact-example">親の退院後の部屋を相談したい</div>
+              <div class="contact-example">本や服が多くて、一人では進まない</div>
+              <div class="contact-example">片づけた後に戻らない仕組みを作りたい</div>
+              <div class="contact-example">介護や家族の予定に合わせて整えたい</div>
             </div>
             <p>LINEから気軽にメッセージをください。</p>
           </div>
