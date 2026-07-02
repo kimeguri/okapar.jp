@@ -322,6 +322,8 @@
         border-radius: 8px;
         background: rgba(255, 255, 255, 0.72);
         padding: 18px 20px 18px 50px;
+        color: inherit;
+        text-decoration: none;
         box-shadow: 0 12px 26px rgba(63, 51, 45, 0.07);
       }
 
@@ -345,11 +347,47 @@
         font-weight: 800;
       }
 
+      .guide-item strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--deep);
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
       .guide-item p {
         margin: 0;
         color: var(--muted);
         font-size: 0.94rem;
         line-height: 1.7;
+      }
+
+      .story-path {
+        min-height: 132px;
+        transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      .story-path::after {
+        content: "";
+        position: absolute;
+        right: 22px;
+        bottom: 22px;
+        width: 9px;
+        height: 9px;
+        border-top: 2px solid rgba(191, 106, 84, 0.62);
+        border-right: 2px solid rgba(191, 106, 84, 0.62);
+        transform: rotate(45deg);
+      }
+
+      .story-path:hover {
+        transform: translateY(-2px);
+        border-color: rgba(191, 106, 84, 0.28);
+        box-shadow: 0 18px 32px rgba(63, 51, 45, 0.1);
+      }
+
+      .story-path:focus-visible {
+        outline: 3px solid rgba(191, 106, 84, 0.32);
+        outline-offset: 3px;
       }
 
       .soft-cta {
@@ -1082,6 +1120,7 @@
         align-items: center;
         max-width: 920px;
         margin-top: 40px;
+        scroll-margin-top: 104px;
         color: var(--deep);
       }
 
@@ -1110,6 +1149,7 @@
         gap: 14px;
         margin-top: 42px;
         max-width: 920px;
+        scroll-margin-top: 104px;
         align-items: stretch;
       }
 
@@ -1145,10 +1185,17 @@
         line-height: 1.9;
       }
 
-      .summary-action {
+      .summary-action,
+      .summary-actions {
         width: 100%;
         margin-top: 0;
         padding-top: 8px;
+      }
+
+      .summary-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
       }
 
       .summary-card {
@@ -1276,6 +1323,7 @@
         margin-top: 34px;
         max-width: 920px;
         align-items: start;
+        scroll-margin-top: 104px;
       }
 
       .story-panel,
@@ -1847,6 +1895,18 @@
           grid-row: auto;
         }
 
+        .story-path {
+          min-height: auto;
+        }
+
+        .summary-lead,
+        .summary-card,
+        .story-panel,
+        .story-note,
+        .story-result {
+          padding: 26px;
+        }
+
         .story-note {
           padding: 28px 24px;
         }
@@ -1975,8 +2035,60 @@
           padding-right: 18px;
         }
 
+        .story-guide .guide-item {
+          padding: 20px 44px 20px 20px;
+        }
+
+        .story-guide .guide-item::before {
+          display: none;
+        }
+
+        .story-guide .guide-item strong {
+          font-size: 0.98rem;
+        }
+
+        .story-summary,
+        .story-highlights,
+        .story-grid,
+        .story-result,
+        .story-videos {
+          margin-top: 28px;
+        }
+
         .story-chapter {
           margin-top: 34px;
+          grid-template-columns: 1fr;
+          gap: 9px;
+          border-top: 1px solid rgba(48, 45, 41, 0.12);
+          padding-top: 18px;
+        }
+
+        .story-chapter::after {
+          display: none;
+        }
+
+        .story-chapter h3 {
+          margin: 0;
+          font-size: 1rem;
+        }
+
+        .summary-lead,
+        .summary-card,
+        .story-panel,
+        .story-note,
+        .story-result,
+        .story-bridge,
+        .story-highlight {
+          padding: 22px;
+        }
+
+        .story-voice {
+          padding-left: 16px;
+          font-size: 0.98rem;
+        }
+
+        .video-card {
+          padding: 10px;
         }
 
         .nobr {
@@ -2457,18 +2569,21 @@
         </div>
 
         <div class="wrap section-guide story-guide" aria-label="MOSAさんの事例の読み進め方">
-          <div class="guide-item">
-            <span>01</span>
-            <p>まず、MOSAさんの望む暮らしと部屋の状態を見つめます。</p>
-          </div>
-          <div class="guide-item">
-            <span>02</span>
-            <p>作業の途中で見えてきた言葉と、仕組みづくりを辿ります。</p>
-          </div>
-          <div class="guide-item">
-            <span>03</span>
-            <p>1ヶ月後に、暮らしがどう動き出したかを見ていきます。</p>
-          </div>
+          <a class="guide-item story-path" href="#story-summary">
+            <span>SHORT</span>
+            <strong>3分で読む要約</strong>
+            <p>Before、Tidy up、Afterの変化を先に短く見られます。</p>
+          </a>
+          <a class="guide-item story-path" href="#story-detail">
+            <span>DETAIL</span>
+            <strong>詳しく読む</strong>
+            <p>望む暮らしが言葉になり、仕組みが整う過程を辿ります。</p>
+          </a>
+          <a class="guide-item story-path" href="#story-movies">
+            <span>MOVIE</span>
+            <strong>動画で見る</strong>
+            <p>OKAPAプログラムの空気感や、変化の様子を動画で見られます。</p>
+          </a>
         </div>
 
         <div class="wrap story-chapter">
@@ -2476,13 +2591,14 @@
           <h3>短い要約で、変化の全体像を見る。</h3>
         </div>
 
-        <div class="wrap story-summary" aria-label="MOSAさんの事例の要約">
+        <div class="wrap story-summary" id="story-summary" aria-label="MOSAさんの事例の要約">
           <div class="summary-lead">
             <p class="section-kicker">SUMMARY</p>
             <p>
-              長い作業の記録の前に、MOSAさんの暮らしに起きた変化を短くまとめました。
+              長い作業の記録の前に、MOSAさんの暮らしに起きた変化を3分ほどで読める形にまとめました。
             </p>
-            <div class="summary-action">
+            <div class="summary-actions">
+              <a class="movie-link" href="#story-detail">詳しく読む</a>
               <a class="movie-link" href="#story-movies">動画で見る</a>
             </div>
           </div>
@@ -2529,7 +2645,7 @@
           </div>
         </div>
 
-        <div class="wrap story-chapter">
+        <div class="wrap story-chapter" id="story-detail">
           <span>CHAPTER 02</span>
           <h3>望む暮らしと、住まいの距離を一緒に見つめる。</h3>
         </div>
